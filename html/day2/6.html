@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        font-family: Arial, sans-serif;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      caption {
+        caption-side: top;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+    </style>
+    <title>서울/제주 월별 날씨 table</title>
+  </head>
+  <body>
+    <table>
+      <caption>
+        서울/제주 월별 날씨
+      </caption>
+      <tr>
+        <th id="city">도시</th>
+        <th id="jan" colspan="2">1월</th>
+        <th id="feb" colspan="2">2월</th>
+      </tr>
+      <tr>
+        <th>&nbsp;</th>
+        <th id="jan-temp">온도</th>
+        <th id="jan-humid">습도</th>
+        <th id="feb-temp">온도</th>
+        <th id="feb-humid">습도</th>
+      </tr>
+      <tr>
+        <th id="seoul">서울</th>
+        <td headers="seoul jan jan-temp">-2</td>
+        <td headers="seoul jan jan-humid">45</td>
+        <td headers="seoul feb feb-temp">3</td>
+        <td headers="seoul feb feb-humid">50</td>
+      </tr>
+      <tr>
+        <th id="jeju">제주</th>
+        <td headers="jeju jan jan-temp">5</td>
+        <td headers="jeju jan jan-humid">70</td>
+        <td headers="jeju feb feb-temp">8</td>
+        <td headers="jeju feb feb-humid">65</td>
+      </tr>
+    </table>
+  </body>
+</html>
