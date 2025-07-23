@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다양한 태그들 알아보기</title>
+  </head>
+  <body>
+    <!-- 기존 방식 -->
+    <!-- <img src="./src/rosy.png" alt="" /> -->
+
+    <!-- picture 방식 -->
+    <picture>
+      <!-- 1순위 : 화면이 800px 이하면 작은 이미지 -->
+      <source srcset="./src/jeju-m.jpg" media="(max-width: 800px)" />
+      <!-- 2순위: 화면이 1280px 이하면 중간 이미지 -->
+      <source srcset="./src/jeju-t.jpg" media="(max-width: 1280px)" />
+      <!-- 3순위 : 위 조건에 맞지 않으면 원본 이미지 -->
+      <img src="./src/jeju-p.jpg" alt="제주도 풍경" />
+    </picture>
+
+    <!-- dialog 태그 실습 -->
+    <!-- <button id="showDialogBtn">모달 열기</button>
+
+    <dialog id="myDialog">
+      <p>함께해서 즐거웠어요!</p>
+      <button id="closeBtn">닫기</button>
+    </dialog>
+
+    <script>
+      const dialog = document.getElementById("myDialog");
+      const showDialogBtn = document.getElementById("showDialogBtn");
+      const closeBtn = document.getElementById("closeBtn");
+
+      showDialogBtn.addEventListener("click", () => {
+        dialog.showModal();
+        console.log("FE 짱짱");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        dialog.close();
+      });
+    </script> -->
+  </body>
+</html>

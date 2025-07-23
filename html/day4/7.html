@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다양한 input 유형들</title>
+    <style>
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="password"
+      placeholder="비밀번호는 특수문자를 포함해야합니다."
+    />
+    <input type="text" required />
+    <input type="text" disabled value="동의합니다." />
+    <!-- 사용자가 입력할 수 x value 있어도 값이 넘어가지 않습니다. -->
+    <input type="text" readonly value="동의합니다." />
+    <!-- 사용자가 입력할수 x value 있다면 서버로 데이터가 전송된다. -->
+    <input type="button" value="신청하기" />
+    <input type="email" />
+    <input type="url" />
+    <!-- 단일값 or 여러개 선택할 수 있음 -->
+    <input type="checkbox" />
+    <!-- 한가지의 버튼만 선택해야할때 -->
+    <input type="radio" />
+    <input type="date" />
+    <input type="time" />
+    <input type="file" />
+    <input type="search" maxlength="5" minlength="2" />
+  </body>
+</html>

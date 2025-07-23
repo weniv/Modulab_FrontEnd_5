@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>select</title>
+  </head>
+  <body>
+    <select name="lang">
+      <option value="ko" selected>한국어</option>
+      <option value="en">영어</option>
+      <option value="jp">일본어</option>
+    </select>
+    <br />
+    <label for="language">사용하는 개발 언어를 선택하세요</label>
+    <select id="language" name="language">
+      <optgroup label="프로그래밍 언어">
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="csharp">C#</option>
+      </optgroup>
+      <optgroup label="데이터베이스">
+        <option value="mysql">MySQL</option>
+        <option value="postgresql">PostgreSQL</option>
+        <option value="mongodb">MongoDB</option>
+        <option value="sqlite">SQLite</option>
+      </optgroup>
+    </select>
+  </body>
+</html>

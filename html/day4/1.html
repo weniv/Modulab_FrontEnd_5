@@ -3,7 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>video 와 audio</title>
+    <title>video</title>
   </head>
-  <body></body>
+  <body>
+    <!-- 현재 브라우저에서 허용되는 방식 : autoplay + muted -->
+    <video
+      src="./src/rabbit.mp4"
+      width="300"
+      controls
+      muted
+      poster="../day2/Rosy.png"
+      preload="auto"
+    ></video>
+    <!-- 2. source 태그와 함께 사용 -->
+    <video controls width="300">
+      <!-- 1. mp4 가장 먼저 배치 -> 그다음형식 -->
+      <!-- 고화질(큰화면) -->
+      <source
+        src="./src/rabbit.mp4"
+        type="video/mp4"
+        media="(min-width: 1024px)"
+      />
+      <!-- 2. 저화질(작은화면) -->
+      <source
+        src="./src/rabbit.MOV"
+        type="video/quicktime"
+        media="(max-width: 1023px)"
+      />
+      비디오를 재생할 수 없습니다.
+    </video>
+  </body>
 </html>
