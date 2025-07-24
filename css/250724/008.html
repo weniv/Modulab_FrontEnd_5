@@ -13,15 +13,18 @@
 
       /* 자식 선택자 */
       section > p {
+        /* section 요소의 자식인 p */
         border: 1px solid red;
       }
 
       /* 일반 형제 선택자 */
       section ~ p {
+        /* section의 뒤에나오는 형제 p */
         background: green;
       }
 
       /* 인접 형제 선택자 */
+      /* section의 인접한(바로 뒤) 형제 p */
       section + p {
         color: white;
       }
