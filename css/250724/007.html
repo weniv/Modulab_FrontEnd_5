@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 전체 선택자 */
+      * {
+        /* 상속X, 초기화 */
+        margin: 0;
+      }
+
+      /* 태그 선택자 */
+      /* 공통 스타일 */
+      h2 {
+        color: pink;
+      }
+      button {
+        padding: 6px;
+        background: lightgray;
+        border: 1px solid black;
+        border-radius: 20px;
+      }
+      a {
+        color: black;
+      }
+      /* 아이디 선택자 # */
+      #title2 {
+        color: red;
+      }
+
+      /* 클래스 선택자 . */
+      .font-blue {
+        background: skyblue;
+      }
+      .list-item {
+        font-weight: 700;
+        color: violet;
+      }
+
+      /* 속성 선택자 [] */
+      /* 속성을 가지고 있는지 */
+      [type] {
+        border: 2px solid red;
+      }
+      [id] {
+        text-decoration: underline; /* 밑줄 */
+      }
+
+      /* 속성 속성값 일치 */
+      [class="font-blue"] {
+        border: 2px solid blue;
+      }
+      /* 포함 */
+      [class*="font-blue"] {
+        outline: 2px solid yellow;
+      }
+
+      /* 그룹 선택자 */
+      section,
+      div,
+      li,
+      #title3 {
+        border: 2px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <!-- id, class: 문자, 숫자, 하이픈(-), 언더스코어(_) 만 사용 -->
+      <!-- 숫자로 시작하면 오류 -->
+      <!-- 저는 [기능-UI요소], login-button, login-cont, name-input, profile-card -->
+      <!-- button-login, btn-login -->
+      <h2 id="title2">Chapter10</h2>
+      <h3 id="title3">10.1 선택자 기초</h3>
+      <p class="font-blue">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quos
+        laudantium voluptate quae porro temporibus amet beatae possimus quia
+        blanditiis, molestias reprehenderit quam quisquam distinctio fuga
+        cupiditate eligendi voluptatem tempora!
+      </p>
+      <button type="button">버튼1</button>
+      <button type="submit">버튼2</button>
+      <button>버튼3</button>
+      <a href="#">링크1</a>
+      <a href="#">링크2</a>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li class="font-blue list-item">item 3</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Chapter11</h2>
+    </section>
+
+    <div>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad quis sunt cum
+      magni. Molestias reiciendis maiores soluta incidunt ratione modi autem
+      sapiente voluptatum voluptatibus totam nemo, omnis reprehenderit amet
+      dolorum.
+    </div>
+  </body>
+</html>

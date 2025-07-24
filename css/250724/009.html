@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1. 후자 우선의 원칙 */
+      p {
+        color: blue;
+        font-size: 24px;
+        font-weight: 700;
+        color: red;
+      }
+      p {
+        /* 구체성: 1 */
+        color: green; /* 가장 마지막에 작성된 속성값 */
+      }
+
+      /* 2. 구체성의 원칙 */
+      .text {
+        /* 구체성: 10 */
+        color: pink;
+      }
+
+      .text-cont .text {
+        /* 구체성: 10 + 10 */
+        color: cyan;
+      }
+
+      #container {
+        /* 상속은 0점 */
+        color: royalblue;
+      }
+      #container .text {
+        /* 구체성 100 + 10 */
+        color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hello World</p>
+
+    <div id="container" class="text-cont">
+      <p class="text">Hello World</p>
+    </div>
+  </body>
+</html>

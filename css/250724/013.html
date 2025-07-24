@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text {
+        text-transform: uppercase; /* 대문자 */
+        text-transform: lowercase; /* 소문자 */
+        text-transform: capitalize; /* 단어의 첫글자를 대문자 */
+        text-transform: none;
+      }
+      .text::first-letter {
+        color: red;
+        text-transform: uppercase;
+      }
+
+      .decoration .position {
+        font-size: 24px;
+        text-decoration-line: overline underline line-through;
+        text-decoration-color: lime;
+        text-decoration-style: solid; /* solid dotted dashed wavy double */
+        text-decoration-thickness: 10px;
+      }
+      .decoration .text {
+        text-decoration: 2px royalblue underline overline wavy;
+      }
+
+      .link {
+        text-decoration: none;
+        color: #000000;
+      }
+      .link:hover {
+        color: dodgerblue;
+        text-decoration: underline;
+      }
+      .delete {
+        color: gray;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="text">hello world</p>
+
+    <div class="decoration">
+      <p class="position">선의 위치를 지정해보겠습니다.</p>
+      <p class="text">축약해서 작성해봅시다</p>
+    </div>
+
+    <a href="#" class="link">스타일 지정 링크</a>
+    <a href="#" class="delete">삭제된 링크입니다.</a>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @font-face {
+        font-family: "Pretendard";
+        src: url("./fonts/Pretendard-Regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Pretendard";
+        src: url("./fonts/Pretendard-Bold.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      p {
+        font-family: "Pretendard", system-ui;
+        /* font-size: 24px; */
+      }
+
+      html {
+        font-size: 10px;
+        /* font-size: 62.5%;  */
+        /* 16px * 62.5% = 10px */
+      }
+      body {
+        font-size: 1.6rem;
+      }
+
+      .parent {
+        font-size: 10px;
+        font-weight: 700; /* bold */
+      }
+      .pixels {
+        font-size: 20px;
+        font-weight: normal; /* 400 */
+      }
+      .em {
+        font-size: 2em; /* 부모 요소의 font-size * 2 */
+      }
+      .rem {
+        font-size: 2rem; /* html(기본크기 16px) font-size * 2 */
+      }
+      .text {
+        /* rem을 이용해서 30px로 */
+        font-size: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="regular">Pretendard Regular</p>
+
+    <section class="parent">
+      <h2>글꼴의 크기는!</h2>
+      <p class="pixels">픽셀로 적용한 폰트</p>
+      <p class="em">em으로 적용한 폰트</p>
+      <p class="rem">rem으로 적용한 폰트</p>
+      <p class="text">30px을 만들고싶어요!</p>
+    </section>
+  </body>
+</html>

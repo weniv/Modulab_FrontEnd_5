@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 클래스 + 유형 선택자 */
+      /* 구체성: 10 + 1 */
+      .ul a {
+        color: yellow;
+      }
+
+      /* 클래스 선택자 */
+      /* 구체성: 10 */
+      .click {
+        color: green;
+        background: black;
+      }
+
+      /* 유형 선택자 */
+      /* 구체성: 1*12 = 12 */
+      html body main section article div ul li p strong span a {
+        background: purple !important;
+        color: blue;
+      }
+
+      div #id1 {
+        color: green;
+      }
+
+      p {
+        color: black;
+      }
+
+      #id1 {
+        color: blue;
+      }
+
+      .class {
+        color: yellow;
+      }
+
+      #id3 {
+        color: cyan !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p id="id1" class="class">1. 이 글자는 어떤 색일까요?</p>
+      <p id="id2" class="class" style="color: red">
+        2. 이 글자는 어떤 색일까요??
+      </p>
+      <p id="id3" class="class" style="color: pink">
+        3. 이 글자는 어떤 색일까요??
+      </p>
+    </div>
+
+    <main>
+      <section>
+        <article>
+          <div>
+            <ul class="ul">
+              <li>
+                <p>
+                  <strong>
+                    <span>
+                      <a href="#" class="click">
+                        1. 이 글자는 어떤 색일까요? 2. 배경색은 어떤 색일까요?
+                      </a>
+                    </span>
+                  </strong>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap");
+
+      /* color 색상 */
+      .color .keyword {
+        color: mediumorchid;
+
+        border: 1px solid red;
+        background: pink;
+      }
+
+      .color .hex {
+        color: #f0f; /* #ff00ff */
+        color: #bfafefaa; /* 마지막 2자리는 투명도(선택값)*/
+      }
+      .rgb {
+        color: rgb(255, 188, 5);
+      }
+      .rgba {
+        color: rgba(255, 188, 5, 0.8);
+      }
+      .current-color {
+        color: hotpink;
+        border: 1px solid currentColor;
+        /* background: currentColor; */
+      }
+
+      .pen {
+        font-family: "Nanum Pen Script", cursive;
+      }
+      .bitcount {
+        font-family: "Bitcount", system-ui;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="color">
+      <p class="keyword">키워드로 설정한 색상</p>
+      <p class="hex">Hex 코드로 설정한 색상</p>
+      <p class="rgb">RGB로 설정한 색상</p>
+      <p class="rgba">RGBA로 설정한 색상</p>
+      <p class="current-color">currentColor</p>
+    </div>
+
+    <div class="font">
+      <p class="pen">Nanum Pen Script 폰트</p>
+      <p class="bitcount">Bitcount 폰트</p>
+    </div>
+  </body>
+</html>

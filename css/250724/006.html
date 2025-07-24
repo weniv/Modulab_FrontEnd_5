@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      p {
+        color: red;
+        border: 1px solid black;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      span {
+        border: inherit;
+        color: royalblue;
+        font-size: initial;
+        font-weight: unset; /* 상속 inherit, 상속X intial */
+        border: unset; /* none */
+
+        all: initial;
+
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      백경현<span
+        >Gyeonghyeon Baek
+        <strong>Frontend</strong>
+      </span>
+    </p>
+  </body>
+</html>
