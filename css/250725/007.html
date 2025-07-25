@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 가상 클래스 선택자 */
+      a:link {
+        /* 방문하지 않았을 때 */
+        color: violet;
+      }
+      .weniv:visited {
+        /* 방문했을때 */
+        color: red;
+      }
+
+      button {
+        padding: 6px 12px;
+        background-color: skyblue;
+        border: 1px solid black;
+      }
+      /* 마우스가 올라와있는지 */
+      button:hover {
+        background-color: greenyellow;
+      }
+      /* 마우스가 클릭되고 있는지 */
+      button:active {
+        background-color: red;
+      }
+      /* 포커스 되었는지 */
+      input:focus {
+        outline: none;
+        border-color: red;
+      }
+
+      .content {
+        border: 1px solid red;
+        background-color: pink;
+      }
+      /* 가상요소 */
+      .content::before {
+        display: block;
+        content: ""; /* 필수 속성 */
+        border: 1px solid aqua;
+        width: 10px;
+        height: 10px;
+        color: aqua;
+      }
+      .content::after {
+        content: "-After의 내용";
+      }
+
+      .list li {
+        list-style: none;
+        padding-left: 10px;
+      }
+      /* .list li::marker { */
+      /* ::marker가 블록 요소의 속성을 가져오지 못하기 때문 */
+      /* content: "☺️";
+      } */
+
+      .list li::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border: 1px solid red;
+        margin-right: 10px;
+      }
+
+      /* marker */
+      /* .custom-bullets li::marker {
+        content: "🍎";
+      } */
+      /* before */
+      .custom-bullets li {
+        list-style: none;
+      }
+      .custom-bullets li::before {
+        content: "🍎";
+      }
+
+      /* ::placeholder */
+      .input-placeholder::placeholder {
+        color: red;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="weniv" href="https://weniv.co.kr">위니브 메인페이지</a>
+    <a class="naver" href="https://www.naver.com">네이버 메인페이지</a>
+
+    <button>Button</button>
+
+    <div>
+      <input type="text" class="focust-inp" />
+      <input type="text" class="focust-inp" />
+      <input type="text" class="focust-inp" />
+    </div>
+
+    <p class="content">
+      <!-- ::before 여기에 -->
+      Content Content
+      <!-- ::after 여기에 -->
+    </p>
+
+    <ul class="list">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+    </ul>
+
+    <ul class="custom-bullets">
+      <li>사과</li>
+      <li>바나나</li>
+      <li>오렌지</li>
+    </ul>
+
+    <input
+      class="input-placeholder"
+      type="text"
+      placeholder="검색어를 입력해주세요."
+    />
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 150px;
+        height: 100px;
+        font-size: 40px;
+        background-color: lightgray;
+      }
+      .child {
+        width: 50vw;
+        height: 50vh;
+        min-height: 100vh;
+        background-color: skyblue;
+        /* font-size를 기준 */
+        /* 요소의 폰트 크기 */
+        /* font-size가 작성되지 않았을때 상속된 값을 사용 */
+        font-size: 80px;
+        width: 5em; /* 상속된 값을 사용 40px = 1em */
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">폰크 크기는 몇이 될까요?</div>
+    </div>
+  </body>
+</html>

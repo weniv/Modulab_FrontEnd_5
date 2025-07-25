@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        background-color: lightblue;
+        width: 300px;
+      }
+      .overflow-clip {
+        text-overflow: clip;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .multi-ellipsis {
+        overflow: hidden;
+        /* 비표준 CSS -> 호환성 체크가 필요 */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>원본 텍스트</h3>
+    <p class="original">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem
+      quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil
+      nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?
+    </p>
+
+    <h3>text-overflow: clip (한 줄)</h3>
+    <p class="overflow-clip">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem
+      quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil
+      nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?
+    </p>
+
+    <h3>text-overflow: ellipsis (한 줄 말줄임)</h3>
+    <p class="ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem
+      quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil
+      nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?
+    </p>
+
+    <h3>여러 줄 말줄임 (3줄)</h3>
+    <p class="multi-ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, ad, autem
+      quaerat sed impedit cupiditate tenetur recusandae facere, alias ab nihil
+      nisi eligendi eaque ea molestiae dolore accusantium repellat maiores?
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
+      aperiam, unde quam quae earum perspiciatis voluptates esse fuga ratione
+      deserunt.
+    </p>
+  </body>
+</html>

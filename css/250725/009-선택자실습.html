@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 선택자로 카드 색상 지정 */
+      section .card:nth-child(1) {
+        /*first-child*/
+        background-color: #ff6b6b;
+      }
+      section .card:nth-child(2) {
+        background-color: #ffa06b;
+      }
+      section .card:nth-child(3) {
+        background-color: #ffd06b;
+      }
+      section .card:nth-child(4) {
+        background-color: #a0ff6b;
+      }
+      section .card:nth-child(5) {
+        background-color: #6bd4ff;
+      }
+      section .card:nth-child(6) {
+        /*last-child*/
+        background-color: #6b8cff;
+      }
+
+      /* 짝수 번째 카드의 텍스트 색상 */
+      section .card:nth-child(2n) {
+        /* even */
+        color: white;
+      }
+
+      /* 첫 번째와 마지막 카드에 특별한 테두리 */
+      /* section .card:first-child,
+      section .card:last-child */
+      section .card:is(:first-child, :last-child) {
+        border: dashed 5px #333;
+      }
+
+      /* 리스트 가상 요소 스타일링 */
+      .team-list li:first-child::marker {
+        content: "🌟";
+      }
+
+      .team-list li:not(:first-child)::marker {
+        content: "✅";
+      }
+
+      /* 리스트 뒤에 가상 요소 추가 */
+      .team-list li::after {
+        content: "팀원";
+        color: #888;
+        font-size: 0.8em;
+      }
+
+      .team-list li:first-child::after {
+        content: "팀장";
+        color: red;
+      }
+
+      /* 카드 기본 스타일 */
+      section .card {
+        padding: 15px;
+        display: inline-block;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: #aaa;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 가상 클래스 -->
+    <!-- 1. 6개의 웹언어의 배경색을 지정 -->
+    <!-- 2. 웹언어 짝수번째 폰트를 흰색으로 -->
+    <!-- 3. 첫번째, 마지막에 오는 요소에는 테두리 -->
+
+    <!-- 가상 요소 -->
+    <!-- 1. 첫번째 팀원(로지)의 이름 앞에는 🌟 -->
+    <!-- 2. 나머지 팀원의 이름 앞에는 ✅ -->
+    <!-- 3. 팀원 이름 뒤에는 '팀원' 텍스트 추가 (회색, 글씨 작게) -->
+    <!-- 4. 팀장을 한명, 팀장의 이름 뒤에 '팀장' 텍스트 추가 (빨간색, 작게, 굵게) -->
+
+    <h1>프로젝트 팀 카드</h1>
+
+    <section>
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React</div>
+      <div class="card">TypeScript</div>
+      <div class="card">Next.js</div>
+    </section>
+
+    <h2>팀원 목록</h2>
+    <ul class="team-list">
+      <li>로지</li>
+      <li>하티</li>
+      <li>일분이</li>
+      <li>웨이드</li>
+      <li>빙키</li>
+      <li>라이캣</li>
+    </ul>
+  </body>
+</html>

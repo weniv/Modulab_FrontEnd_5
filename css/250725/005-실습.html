@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        font-size: 10px;
+        font-size: 62.5%; /* 16px * 62.5% = 10px */
+      }
+      body {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 4rem;
+      }
+      h2 {
+        font-size: 40px;
+      }
+      h3 {
+        /* body 적용되어있는 폰트 크기: 10px */
+        font-size: 2em;
+
+        /* body를 1.6rem */
+        font-size: 1.25em;
+      }
+
+      .parents {
+        background-color: pink;
+        width: 25vw;
+        font-size: 50px;
+      }
+
+      .child1 {
+        background-color: skyblue;
+        font-size: 50%;
+        /* em -> font-size를 기준 */
+        width: 50vw;
+      }
+
+      .child2 {
+        background-color: lime;
+        font-size: 0.5em; /* 50% */
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <p>rem을 사용해서 font-size: 40px;</p>
+    <h2>px을 사용해서 font-size: 40px;</h2>
+    <h3>em을 사용해서 font-size: 20px;</h3>
+    <div class="parents">
+      너비가 뷰포트를 기준으로 1/4
+      <br />
+      font-size: 50px;
+      <div class="child1">
+        글씨의 사이즈는 부모의 50%
+        <br />
+        너비가 뷰포트 기준으로 1/2
+        <div class="child2">
+          글씨의 사이즈는 부모의 50%
+          <br />너비가 뷰포트 기준으로 100%
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

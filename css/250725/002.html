@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .normal-line-height {
+        line-height: normal;
+        /* 들여쓰기 */
+        text-indent: 10%;
+        /* text-indent: 10px; */
+
+        background-color: skyblue;
+        width: 300px;
+        word-break: normal;
+        /* 글자 단위로 줄바꿈 */
+        word-break: break-all;
+        /* 문자 단위로 줄바꿈 */
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+      .increased-line-height {
+        line-height: 1.5;
+
+        span {
+          /* em, % 계산된 line-height가 상속 */
+          /* 숫자만 쓰는 경우에는 자식요소 font-size에 맞춰 설정 */
+          font-size: 20px;
+        }
+      }
+
+      .normal-spacing {
+        letter-spacing: normal;
+      }
+      .wide-spacing {
+        letter-spacing: 0.5em;
+      }
+      .narrow-spacing {
+        letter-spacing: -0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="normal-line-height">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+      molestiae
+      consequunturconsequunturconsequunturconsequunturconsequunturconsequunturconsequuntur
+      vitae incidunt ipsum porro officia, dolorem sit quidem, corrupti dolores
+      provident soluta eligendi voluptatem alias dolore fugiat aspernatur ab!
+    </p>
+    <p class="normal-line-height">
+      국무위원은 국무총리의 제청으로 대통령이 임명한다. 대통령은 국무회의의
+      의장이 되고, 국무총리는 부의장이 된다. 이 헌법에 의한 최초의 대통령의
+      임기는 이
+      헌법시행일로부터헌법시행일로부터헌법시행일로부터헌법시행일로부터헌법시행일로부터헌법시행일로부터헌법시행일로부터
+      개시한다. 사법권은 법관으로 구성된 법원에 속한다. 대한민국은
+      민주공화국이다. 감사원의 조직·직무범위·감사위원의 자격·감사대상공무원의
+      범위 기타 필요한 사항은 법률로 정한다.
+    </p>
+    <p class="increased-line-height">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis
+      molestiae consequuntur vitae incidunt ipsum porro officia, dolorem sit
+      quidem, corrupti dolores provident soluta eligendi voluptatem alias dolore
+      fugiat aspernatur ab!
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum
+        perferendis rerum deserunt delectus id. Iure est aliquid nam, possimus
+        quod, delectus perspiciatis odio quis error culpa laudantium molestiae
+        in perferendis!</span
+      >
+    </p>
+
+    <p class="normal-spacing">자간을 설정해보겠습니다</p>
+    <p class="wide-spacing">자간을 설정해보겠습니다</p>
+    <p class="narrow-spacing">자간을 설정해보겠습니다</p>
+  </body>
+</html>

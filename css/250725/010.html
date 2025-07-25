@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* :root 최상위 */
+      :root {
+        /* 이름을 작성할때는 -2개쓰고이름 : 지정할 값 */
+        --primary-color: #ff9823;
+        --background-color: #fff;
+        --gray-Lv1-color: #f3f5fa;
+
+        --shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      }
+      [data-theme="dark"] {
+        --primary-color: #de831c;
+        --background-color: #000;
+      }
+      body {
+        background-color: var(--background-color);
+      }
+
+      p {
+        color: var(--gray-Lv2-color, red); /* var안에 내가 쓸 이름 */
+      }
+      button {
+        padding: 6px 12px;
+        border-radius: 20px;
+        background-color: var(--primary-color);
+        border: 1px solid var(--gray-Lv1-color);
+        box-shadow: var(--shadowLg, 0 0 8px rgba(0, 0, 0, 0.5));
+      }
+    </style>
+  </head>
+  <body>
+    <p>Hello World</p>
+    <button>버튼!</button>
+  </body>
+</html>

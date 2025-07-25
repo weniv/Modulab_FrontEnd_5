@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* list-style */
+      /* list-style-type, list-style-position, list-tyle-image */
+      @counter-style Style {
+        system: cyclic;
+        symbols: "🫏" "🚩" "✒️" "❣️" "😭";
+        suffix: "----";
+      }
+
+      ul {
+        /* 기본값 disc */
+        /* disc, circle, square, decimal */
+        list-style-type: decimal;
+        list-style-position: outside;
+        list-style-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+        list-style: none;
+        list-style-type: Style;
+
+        width: 300px;
+      }
+      ul li {
+        border: 1px solid red;
+      }
+      ol {
+        /* 기본값 decimal */
+        list-style-type: decimal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 목록을 나타내는 태그 -->
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>
+        item 5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+        soluta mollitia quae eveniet error quos neque hic aliquid quis, placeat
+        quia nemo, nisi sequi ea inventore in qui illo impedit?
+      </li>
+      <li>item 6</li>
+    </ul>
+
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+    </ol>
+  </body>
+</html>

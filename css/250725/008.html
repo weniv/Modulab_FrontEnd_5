@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* fist-child, last-child */
+      li:first-child {
+        border: 1px solid red;
+      }
+      li:last-child {
+        background: pink;
+      }
+
+      /* nth-child */
+      li:nth-child(3) {
+        color: blue;
+      }
+      li:nth-child(odd) {
+        /* 홀수 */
+        color: hotpink;
+      }
+      li:nth-child(even) {
+        color: royalblue;
+      }
+      /* n은 0부터 1씩 커짐 */
+      li:nth-child(n + 8) {
+        border: 1px solid lime;
+      }
+
+      /* nth-of-type */
+      /* type끼리 비교 */
+      h2:nth-of-type(2) {
+        color: violet;
+      }
+      p:nth-of-type(1) {
+        color: skyblue;
+      }
+      p:nth-child(1) {
+        color: red;
+      }
+
+      /* only-of-type */
+      :only-of-type {
+        border: 1px solid salmon;
+      }
+
+      /* :not() */
+      li:not(:first-child) {
+        text-decoration: underline;
+      }
+      /* :is() */
+      h1 a,
+      h2 a,
+      h3 a {
+        /* color: red; */
+      }
+      :is(h1, h2, h3) a {
+        /* 태그 선택자은 구체성 1점 */
+        color: red;
+      }
+      :where(h1, h2, h3) a {
+        /* where은 구체성 0점 */
+        color: green;
+      }
+
+      /* :has */
+      *:has() {
+        border: 3px solid aqua !important;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+      <li>item 6</li>
+      <li>item 7</li>
+      <li>item 8</li>
+      <li>item 9</li>
+      <li>item 10</li>
+    </ul>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+    </ul>
+
+    <div>
+      <h2>첫번째 제목</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
+        repellat sed dolorum consectetur hic numquam placeat mollitia, sapiente
+        libero distinctio ut sequi illum in beatae quo nostrum suscipit ipsam
+        ex!
+      </p>
+      <h2>두번째 제목</h2>
+    </div>
+
+    <section>
+      <h1><a href="#">h1의 링크</a></h1>
+      <h2><a href="#">h2의 링크</a></h2>
+      <h3><a href="#">h3의 링크</a></h3>
+      <div>
+        <a href="#">div의 링크</a>
+      </div>
+    </section>
+  </body>
+</html>
