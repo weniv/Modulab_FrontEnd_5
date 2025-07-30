@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 20px;
+        /* 마진 병합 현상 */
+        /* 블록 레벨 요소 인접해 있을때, 상하 마진이 병합 */
+        /* 레이아웃의 일관성 */
+      }
+      .child:nth-child(2) {
+        /* 더 큰 마진만큼 공간을 차지 */
+        /* margin-top: 40px; */
+      }
+      .parent {
+        background-color: skyblue;
+        width: fit-content;
+
+        /* 부모 자식 간의 마진 병합 */
+        /* 1. 부모 요소 block 요소가 아니게 설정 */
+        /* display: inline-block; */
+
+        /* 2. 부모 요소의 마진 / 자식 요소 마진 사이에 구분할 수 있는 값을 설정 */
+        /* padding: 1px; */
+        /* border: 1px solid transparent; */
+        /* 2px의 레이아웃 오차가 발생 */
+
+        /* 3. overflow 속성 */
+        overflow: hidden;
+        /* BFC(Block Formatting Context), 자식 요소가 부모 요소의 영향을 받지X -> 마진을 분리해서 적용O */
+
+        /* 4. flow-root */
+        display: flow-root;
+        /* BFC를 만듦 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">1</div>
+      <div class="child">2</div>
+    </div>
+    <span>Hello world</span>
+  </body>
+</html>

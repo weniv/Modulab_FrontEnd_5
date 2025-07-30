@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: pink;
+        border: 1px solid black;
+
+        /* padding 안쪽 여백 */
+        /* 상하좌우 동일 */
+        padding: 10px;
+        /* 단축속성 */
+        /* 상하 좌우 */
+        padding: 10px 20px;
+        /* 상 좌우 하 */
+        padding: 10px 20px 30px;
+        /* 상 우 하 좌 */
+        padding: 10px 20px 30px 40px;
+
+        padding: 10px;
+        padding-left: 30px;
+
+        /* margin 바깥쪽 여백 */
+        margin: 10px;
+        /* 상하 좌우 */
+        margin: 10px 20px;
+        margin: 10px 20px 30px;
+        margin: 10px 20px 30px 40px;
+
+        /* margin: auto; */
+        /* auto 좌우 가질 수 있는 최대 너비 / 세로 0px */
+        width: 200px;
+        margin: auto;
+      }
+      .box:nth-child(1) {
+        /* border: 1px solid red; */
+        margin: 0;
+        margin-right: auto;
+        /* margin-top:0 margin-left:0 margin-bottom:0 margin-right:auto */
+      }
+      .box:nth-child(2) {
+        margin: 10px;
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 여백: padding, margin -->
+    <div class="box">1</div>
+    <div class="box">2</div>
+  </body>
+</html>

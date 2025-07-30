@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 200px;
+        background-color: pink;
+        margin: 100px auto;
+
+        /* box-shadow */
+        /* offset-x offset-y blur size color */
+        box-shadow: -12px -12px 4px 12px rgba(0, 0, 0, 0.5);
+        /* 다중 그림자 */
+        box-shadow: 4px 4px red, -4px -4px blue;
+        /* 내부 그림자 */
+        /* box-shadow: inset 4px 4px 4px 12px rgba(0, 0, 0, 0.5); */
+
+        /* opacity */
+        /* 요소의 투명도, 0 ~ 1 */
+        /* 텍스트도 투명해짐 -> 가독성 문제 */
+        /* opacity: 0.3; */
+        /* 텍스트 투명X, 배경 투명O */
+        background-color: rgba(255, 0, 255, 0.5);
+
+        position: relative;
+        z-index: 50;
+      }
+      .back {
+        border: 1px solid black;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 50px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Hello World</div>
+    <div class="back"></div>
+  </body>
+</html>

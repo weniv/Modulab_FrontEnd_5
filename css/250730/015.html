@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "Pretendard";
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+          format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      /* 공통된 스타일 */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Pretendard";
+      }
+
+      .btn {
+        width: 88px;
+        height: 32px;
+        border: 1px solid #1a202c;
+        background: #343f50;
+        box-shadow: 2px 2px 0px 0px #ffffff1a inset;
+
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 100%;
+        text-align: center;
+        color: #cbd5df;
+      }
+      .btn:hover {
+        color: #fff;
+        text-decoration: underline;
+        box-shadow: 2px 2px 0px 0px #ffffff33 inset;
+      }
+      .btn:active {
+        color: #fff;
+        text-decoration: underline;
+        box-shadow: 2px 2px 0px 0px #00000033 inset;
+      }
+      /* positive */
+      .positive {
+        color: #439aff;
+      }
+      .positive:hover,
+      .positive:active {
+        background-color: #439aff;
+      }
+      /* negative */
+      .negative {
+        color: #eb5757;
+      }
+      .negative:hover,
+      .negative:active {
+        background-color: #eb5757;
+      }
+
+      /* disabled */
+      .btn[disabled] {
+        color: #4a5568;
+        box-shadow: initial;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn normal">Button</button>
+    <button class="btn normal" disabled>Button</button>
+    <button class="btn positive">Yes</button>
+    <button class="btn negative">Del</button>
+  </body>
+</html>

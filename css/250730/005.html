@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background: pink;
+        width: 150px;
+        height: 100px;
+        margin: 20px auto;
+      }
+      .box1 {
+        /* border */
+        /* 1px -> border-width */
+        /* solid -> border-style */
+        /* red -> border-color */
+        border: 1px solid red;
+
+        /* 두께 border-width */
+        /* 방향에 대한 단축속성 */
+        border-width: 5px;
+        border-width: 10px 15px;
+
+        /* 스타일 border-style */
+        border-style: dashed;
+        border-style: double dotted;
+
+        /* 색상 border-color */
+        border-color: blue;
+        border-color: green yellow purple;
+
+        /* shorten */
+        border: 10px solid red;
+        border: 5px dashed blue;
+        border: none;
+        border-top: 10px dotted green;
+        border-left: 10px solid yellow;
+        border-right: 5px double purple;
+      }
+
+      /* box1, box2 어떤 차이가 있나? 크기가 다름 */
+      /* width, height가 콘텐츠의 크기를 기준으로 적용 */
+      /* 요소가 같는 width = 설정한 width + border-width + padding */
+      .box1 {
+        padding: 20px;
+      }
+      div {
+        box-sizing: content-box;
+        box-sizing: border-box;
+        /* width, height 포함되는 범위 -> border까지 */
+        /* 상속되는 속성 X -> 전체 선택자를 이용해서 box-sizing 설정 */
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+  </body>
+</html>

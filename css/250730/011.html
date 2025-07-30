@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        border: 1px solid black;
+        width: 300px;
+        height: 200px;
+        margin: 10px;
+
+        /* garry를 반복하지 않고 가운데 이미지 가득 차게 */
+        /* background-image: url("./images/weniv-garry.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-position: 50% 50%;
+        background-size: cover; */
+
+        background: url("./images/weniv-garry.png") no-repeat 50% 50% / cover;
+      }
+      .box2 {
+        border: 1px solid black;
+        width: 80vw;
+        height: 50vh;
+        margin-left: auto;
+        /* suri를 y축 반복으로 비율 깨지지 않고 위부터 이미지 전체 보이게 */
+        /* background-image: url("./images/weniv-suri.png");
+        background-repeat: repeat-y;
+        background-size: contain; */
+
+        background: url("./images/weniv-suri.png") repeat-y;
+        background-size: contain;
+      }
+      .box3 {
+        border: 1px solid black;
+        width: 300px;
+        height: 400px;
+        margin: 10px;
+        /* licat을 x축 반복으로 가운데에 3개의 이미지가 보이도록 하고 배경색은 greenyellow  */
+        /* background-color: greenyellow;
+        background-image: url("./images/weniv-licat.png");
+        background-repeat: repeat-x;
+        background-size: 33.3%;
+        background-position: left center; */
+        background: greenyellow url("./images/weniv-licat.png") repeat-x left
+          center / 33.3%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+  </body>
+</html>

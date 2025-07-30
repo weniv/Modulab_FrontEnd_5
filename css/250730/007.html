@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        margin: 20px auto;
+
+        /* border-radius */
+        /* 네 모서리 모두 10x */
+        border-radius: 10px;
+
+        /* 왼쪽위+오른쪽아래 / 오른쪽위+왼쪽아래 */
+        border-radius: 10px 20px;
+
+        /* 왼쪽위 / 오른쪽위+왼쪽아래 / 오른쪽아래 */
+        border-radius: 10px 20px 30px;
+
+        /* 왼쪽위를 기준으로 시계 방향 */
+        border-radius: 10px 20px 30px 40px;
+
+        border-radius: 10%;
+        border-radius: 20%;
+        border-radius: 50%;
+        /* 50%보다 큰 값이 적용되어도 원형을 유지 */
+        border-radius: 100%;
+
+        border-radius: 10% / 20%;
+        border-radius: 49% 51% 61% 39% / 40% 30% 70% 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 요소의 모서리를 둥글게 -->
+    <div class="box"></div>
+  </body>
+</html>

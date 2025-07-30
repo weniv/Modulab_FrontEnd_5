@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      div {
+        border: 3px solid red;
+        width: 200px;
+        height: 100px;
+        margin: 10px;
+      }
+      .hidden {
+        /* 넘어가는 요소를 숨김처리 */
+        /* 내용... 더보기 */
+        overflow: hidden;
+      }
+      .scroll {
+        overflow: scroll;
+        /* overflow-x(가로축) overflow-y(세로축) */
+        /* overflow-x: hidden; */
+        white-space: nowrap; /* 줄바꿈 방지 속성 */
+        overflow-y: hidden;
+      }
+      .auto {
+        /* 크기를 넘어갈 경우에만 스크롤이 보이도록 */
+        overflow: auto;
+      }
+      .ko-text {
+        word-break: keep-all; /* 단어 단위 */
+        /* 단어가 너무 길어져서 부모 요소를 넘어갈 때 줄바꿈 */
+        overflow-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- overflow -->
+    <div class="hidden">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati ullam,
+      sunt possimus temporibus facere, esse animi totam dolorum inventore
+      accusamus nemo. Placeat alias veniam odit quis blanditiis eum soluta
+      accusantium!
+    </div>
+    <div class="hidden ko-text">
+      중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는
+      정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다. 대한민국의 영토는
+      한반도와 그 부속도서로 한다. 타인의 범죄행위로 인하여 생명·신체에 대한
+      피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수
+      있다.
+    </div>
+    <div class="scroll">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati ullam,
+      sunt possimus temporibus facere, esse animi totam dolorum inventore
+      accusamus nemo. Placeat alias veniam odit quis blanditiis eum soluta
+      accusantium!
+    </div>
+    <div class="scroll">
+      중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는
+      정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다. 대한민국의 영토는
+      한반도와 그 부속도서로 한다. 타인의 범죄행위로 인하여 생명·신체에 대한
+      피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수
+      있다.
+    </div>
+    <div class="auto">
+      o. Placeat alias veniam odit quis blanditiis eum soluta accusantium!
+    </div>
+    <div class="auto">
+      중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는
+      정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는
+      범위안에서 내부규율에 관한 규칙을 제정할 수 있다. 대한민국의 영토는
+      한반도와 그 부속도서로 한다. 타인의 범죄행위로 인하여 생명·신체에 대한
+      피해를 받은 국민은 법률이 정하는 바에 의하여 국가로부터 구조를 받을 수
+      있다.
+    </div>
+  </body>
+</html>

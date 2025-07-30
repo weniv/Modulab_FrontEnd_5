@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .width {
+        border: 1px solid black;
+      }
+      .auto {
+        /* 기본값, 부모 요소를 기준으로 가질 수 있는 최대 너비 */
+        width: auto;
+      }
+      .min {
+        /* 요소가 가질 수 있는 최소 너비 */
+        /* 영어 -> 가장 긴 단어  */
+        /* 한글 -> 한글자 */
+        width: min-content;
+      }
+      .max {
+        /* 줄바꿈 없이 최대 크기 */
+        /* 부모 요소를 벗어날 수 있음 */
+        width: max-content;
+      }
+      .fit {
+        /* 사용가능한 전체 공간(auto)처럼 동작, 콘텐츠의 너비가 작다면 콘텐츠 크기만큼만 차지  */
+        width: fit-content;
+      }
+
+      .units {
+        width: 200px;
+
+        /* 부모 요소의 크기 기준 */
+        width: 80%;
+        /* 뷰포트 크기를 기준 */
+        width: 50vw;
+      }
+
+      /* height */
+      .height {
+        background-color: pink;
+        /* 기본값, 콘텐츠 높이만큼만 자동으로 결정 */
+        height: auto;
+        height: 300px;
+        height: 100vh;
+      }
+      .child {
+        background-color: teal;
+        height: 50px;
+
+        /* 부모 요소의 높이가 값으로 명시 */
+        height: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="width auto">auto 속성을 적용한 요소</div>
+    <div class="width min">min-content 속성을 적용한 요소</div>
+    <div class="width max">
+      max-content 속성을 적용한 요소 max-content 속성을 적용한 요소 max-content
+      속성을 적용한 요소 max-content 속성을 적용한 요소
+    </div>
+    <div class="width fit">
+      fit-content 속성을 적용한 요소 fit-content 속성을 적용한 요소 fit-content
+      속성을 적용한 요소 fit-content 속성을 적용한 요소 fit-content 속성을
+      적용한 요소
+    </div>
+    <div class="width units">단위를 사용한 요소</div>
+
+    <div class="height">
+      1
+      <div class="child">2</div>
+    </div>
+  </body>
+</html>

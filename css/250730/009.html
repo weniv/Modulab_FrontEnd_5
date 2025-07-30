@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 90vw;
+        height: 90vh;
+
+        /* 배경색 -color */
+        background-color: skyblue;
+        background-color: #22aabb;
+        background-color: rgba(255, 0, 255, 0.5);
+
+        /* 배경 이미지 -image */
+        background-image: url("./images/weniv-binky.png");
+
+        /* 요소의 크기만큼 반복되어서 보임 -repeat */
+        background-repeat: repeat;
+        background-repeat: no-repeat;
+        background-repeat: repeat-x;
+        background-repeat: repeat-y;
+        background-repeat: no-repeat;
+
+        /* 위치를 지정 -position */
+        background-position: right bottom;
+        background-position: left center;
+        background-position: center;
+
+        background-position: 0% 0%;
+        background-position: 100% 60%;
+
+        background-position: 0px 0px;
+        background-position: 30px 40px;
+
+        /* x-position y-position */
+        /* 1개의 값만 있는 경우 x-position, y-position:center */
+        background-position: 100px;
+        background-position: center;
+
+        /* 크기를 지정 -size */
+        /* 비율을 유지, 잘리지 않는 최대 크기 -> 여백 */
+        background-image: url("./images/weniv-suri.png");
+        background-size: contain;
+        /* 비율을 유지, 여백이 생기지 않는 최대 크기 -> 이미지의 일부가 잘림 */
+        background-size: cover;
+        /* 비율이 깨질 수 있다. 부모요소의 크기를 기준으로 결정 */
+        background-size: 50% 50%;
+        background-size: 350px 500px;
+
+        /* background-clip 범위 */
+        border: 10px dashed black;
+        background-clip: border-box;
+        background-clip: padding-box;
+        padding: 10px;
+        background-clip: content-box;
+        background-clip: border-box;
+
+        /* 배경 이미지의 범위 -origin */
+        all: revert;
+        width: 90vw;
+        height: 90vh;
+        border: 10px dashed black;
+        background-image: url("./images/weniv-suri.png");
+        background-color: skyblue;
+        background-repeat: no-repeat;
+
+        background-origin: border-box;
+        background-origin: padding-box;
+        padding: 10px;
+        background-origin: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

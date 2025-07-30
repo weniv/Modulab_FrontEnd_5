@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        border: 2px solid black;
+        height: 50vh;
+        /* 단축 속성 작성 */
+        /* 배경색은 royalblue, 이미지는 weniv-wade.png 반복 없이 화면을 가득채우도록 */
+        /* 순서 고정 position / size , size 단독 사용 불가 */
+        background: url("./images/weniv-wade.png") no-repeat center / cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <!-- 이미지를 보여주는 태그 -->
+    <!-- html 요소: 콘텐츠의 흐름상 필요한 이미지를 img 태그 사용 -->
+    <img src="./images/weniv-binky.png" alt="" />
+    <!-- background-image는 장식적인 요소 -->
+  </body>
+</html>
