@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* aspect-ratio */
+      .ratio.square img {
+        aspect-ratio: 1/1;
+        width: 30%;
+        object-fit: cover;
+      }
+      .ratio.rectangle img {
+        aspect-ratio: 2/1;
+        width: 30%;
+        object-fit: cover;
+      }
+
+      /* padding */
+      .padding.square {
+        width: 30%;
+        padding-top: 30%;
+        position: relative;
+        height: 0;
+
+        display: inline-block;
+      }
+      .padding.square img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+
+      .padding.rectangle {
+        width: 30%;
+        display: inline-block;
+        /* 2 : 1 = width : padding-top */
+        padding-top: 15%;
+        height: 0;
+        position: relative;
+      }
+      .padding.rectangle img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* cover된 위치를 설정 */
+        object-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 이미지 3개는 1:1의 비율 / 나머지 이미지 3개는 2:1 비율 -->
+    <!-- 한 줄에 3개씩 이미지가 배치되도록 너비를 설정 -->
+    <!-- 30분까지 -->
+    <h2>aspect ratio 방식</h2>
+    <div class="ratio square">
+      <img src="./images/weniv-binky.png" alt="" />
+      <img src="./images/weniv-chilli.png" alt="" />
+      <img src="./images/weniv-garry.png" alt="" />
+    </div>
+    <div class="ratio rectangle">
+      <img src="./images/weniv-licat.png" alt="" />
+      <img src="./images/weniv-suri.png" alt="" />
+      <img src="./images/weniv-wade.png" alt="" />
+    </div>
+
+    <h2>padding-top</h2>
+    <div class="padding square">
+      <img src="./images/weniv-binky.png" alt="" />
+    </div>
+    <div class="padding square">
+      <img src="./images/weniv-chilli.png" alt="" />
+    </div>
+    <div class="padding square">
+      <img src="./images/weniv-garry.png" alt="" />
+    </div>
+    <div class="padding rectangle">
+      <img src="./images/weniv-licat.png" alt="" />
+    </div>
+    <div class="padding rectangle">
+      <img src="./images/weniv-suri.png" alt="" />
+    </div>
+    <div class="padding rectangle">
+      <img src="./images/weniv-wade.png" alt="" />
+    </div>
+  </body>
+</html>

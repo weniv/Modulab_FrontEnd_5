@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hidden {
+        background-color: pink;
+        /* 화면에서 요소가 보이지 않도록 설정 */
+        /* 레이아웃에서도 사라짐. 접근성 트리에서 사라짐  */
+        /* 스크린 리더에서 읽히지 않는다. */
+        /* display: none; */
+        /* visibility: hidden; */
+        /* 특정 조건 -> 모달창을 보여주거나, 특정 상황에서 특정 UI */
+
+        /* 1.텍스트를 화면에서 숨기는 기능 */
+        text-indent: -9999px;
+      }
+      /* 2. 컨텐츠를 화면 밖으로 보내는 기능 */
+      /* 아이콘 버튼에 설명을 추가, svg에 설명을 추가 */
+      .sr-only {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        /* 0px로 설정하게되면 -> 스크린리더 무시할 수 있음 */
+        overflow: hidden;
+      }
+      /* 3. clip을 사용하는 방식 */
+      /* 웹접근성 accessibility a11y */
+      /* clip 더 이상 사용되지 않는 속성 -> clip-path */
+      /* clip 구버전 브라우저, clip-path 최신 브라우저 */
+      .a11y-hidden {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      }
+
+      .a11y-hidden {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      }
+
+      /* 스니펫 a11y + tab */
+      .a11y-hidden {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hidden">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, adipisci
+      quaerat! Quis provident nemo, assumenda facilis enim repellendus
+      reprehenderit voluptatibus nam quasi reiciendis sit labore adipisci
+      eveniet saepe voluptatem obcaecati.
+    </div>
+    <div>Hello World</div>
+
+    <button>
+      <img src="./images/icon-heart-fill.png" alt="" />
+      <span class="a11y-hidden">좋아요</span>
+    </button>
+  </body>
+</html>

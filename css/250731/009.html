@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        margin: auto;
+        background: lemonchiffon;
+        width: 50vw;
+        height: 50vh;
+        position: relative;
+        z-index: 25;
+        /* z-index: auto; */
+        /* 부모 요소에 z-index -> 새로운 쌓임 맥락이 발생 */
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        position: absolute;
+      }
+      /* 기본적으로 html 요소를 작성한 순서에 따라 쌓임 맥락 */
+      /* z-index 쌓임 맥락을 조절 -> 어떤 요소가 앞에 올지를 결정 */
+      /* z-index position이 static이 아닌 경우에 적용 */
+      .box.red {
+        top: 40px;
+        left: 40px;
+        background-color: rgba(255, 0, 0, 0.5);
+        z-index: 50;
+      }
+      .box.green {
+        top: 80px;
+        left: 80px;
+        background-color: rgba(0, 255, 0, 0.5);
+        z-index: 100;
+      }
+      .box.blue {
+        top: 120px;
+        left: 120px;
+        background-color: rgba(0, 0, 255, 0.5);
+        /* z-index 음수를 부모 요소의 뒤로 보낼 수 있음 */
+        /* 부모 요소에 z-index가 auto(기본값)인 경우 */
+        z-index: -10;
+      }
+      .box.question {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 0, 255, 0.5);
+        top: 20px;
+        left: 200px;
+        z-index: 200;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box red">1</div>
+      <div class="box green">2</div>
+      <div class="box blue">3</div>
+    </div>
+    <div class="box question">이 요소는 어디에 배치될까요?</div>
+  </body>
+</html>

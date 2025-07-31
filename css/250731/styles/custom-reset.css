@@ -1,0 +1,159 @@
+/* reset ------------------------------------------------------- */
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+button,
+input {
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+button {
+  background: none;
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
+}
+button:enabled {
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+img,
+svg {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font: inherit;
+}
+
+/* 폰트 ------------------------------------------------------- */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+/* 폰트*/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* 테마 ------------------------------------------------------- */
+body {
+  --primary: #2e6ff2;
+  --background: #fff;
+  --surface: #121314;
+  --grayLv1: #f3f5fa;
+  --grayLv2: #d9dbe0;
+  --grayLv3: #8d9299;
+  --grayLv4: #47494d;
+  --error: #ff3440;
+  --warn: #ffc533;
+  --activation: #dee8ff;
+  --code-pink: #c93864;
+  --code-purple: #964dd1;
+  --code-blue: #2e5dd6;
+  --code-green: #328026;
+  --code-orange: #e37c00;
+  --primaryA11y: #2861d2;
+  --grayLv3A11y: #6c7074;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --primary: #3075ff;
+    --background: #1f2123;
+    --surface: #fff;
+    --grayLv1: #121314;
+    --grayLv2: #595f66;
+    --grayLv3: #d9dbe0;
+    --grayLv4: #f3f5fa;
+    --error: #fc7377;
+    --warn: #ffe187;
+    --activation: #2b3444;
+    --code-pink: #ed4779;
+    --code-purple: #c893fd;
+    --code-blue: #618dff;
+    --code-green: #50c140;
+    --code-orange: #ffa52a;
+    --primaryA11y: #3075ff;
+    --grayLv3A11y: #d9dbe0;
+  }
+}
+
+/* 공통 ------------------------------------------------------- */
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.sl-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.multi-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      span {
+        background-color: pink;
+        border: 1px solid black;
+
+        width: 300px;
+        height: 100px;
+        margin: 30px;
+        /* padding: 20px; */
+      }
+
+      div {
+        background-color: skyblue;
+        border: 1px solid black;
+
+        width: 300px;
+        height: 100px;
+        margin: 30px;
+      }
+      .block {
+        display: block;
+      }
+      .inline {
+        display: inline;
+      }
+      .inline-block {
+        background-color: greenyellow;
+        display: inline-block;
+        /* 인라인 요소처럼 배치, 박스 모델 width, height, 상하 margin이 적용 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- display: 요소가 어떻게 배치될지를 결정 -->
+    <!-- 블록 레벨 요소, 인라인 요소 ... 이런 방식으로 배치될지를 결정 -->
+
+    <!-- span 태그 4개 -->
+    <!-- 인라인 요소 -->
+    <span class="block">이것은 display:block 요소입니다.</span>
+    <span class="block">이것은 display:block 요소입니다.</span>
+    <span class="inline">이것은 display:inline 요소입니다.</span>
+    <span class="inline">이것은 display:inline 요소입니다.</span>
+
+    <!-- 블록 레벨 요소 -->
+    <div class="block">이것은 display:block 요소입니다.</div>
+    <div class="block">이것은 display:block 요소입니다.</div>
+    <div class="inline">이것은 display:inline 요소입니다.</div>
+    <div class="inline">이것은 display:inline 요소입니다.</div>
+
+    <!-- inline-block -->
+    <div class="inline-block">이것은 display:inline-block 요소입니다.</div>
+    <span class="inline-block">이것은 display:inline-block 요소입니다.</span>
+  </body>
+</html>

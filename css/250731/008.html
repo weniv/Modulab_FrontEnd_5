@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 300vh;
+      }
+      .header {
+        background-color: pink;
+        height: 60px;
+        position: fixed;
+        width: 100%;
+      }
+      .main {
+        padding: 10px;
+        padding-top: 70px;
+        height: 200vh;
+      }
+      .article {
+        background-color: lightblue;
+        padding: 10px;
+        margin: 10px;
+        position: sticky;
+        top: 70px;
+      }
+      .btn-top {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        background-color: teal;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 헤더는 스크롤 상관 없이 최상단 -->
+    <!-- 2. 하늘색 박스는 헤더의 아래에 위치했을때 스크롤 -->
+    <!-- 3. 청록색 박스는 오른쪽 하단에 항상 고정 -->
+    <section class="container">
+      <header class="header">헤더는 항상 최상단에 위치합니다.</header>
+      <main class="main">
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque alias
+          explicabo excepturi quae molestias omnis quod, tenetur consequatur
+          odit voluptatem dignissimos earum voluptate tempore cumque rerum?
+          Accusamus nulla accusantium consequatur? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Eaque alias explicabo excepturi quae
+          molestias omnis quod, tenetur consequatur odit voluptatem dignissimos
+          earum voluptate tempore cumque rerum? Accusamus Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Eaque alias explicabo excepturi
+          quae molestias omnis quod, tenetur consequatur odit voluptatem
+          dignissimos earum voluptate tempore cumque rerum? Accusamus nulla
+          accusantium consequatur? Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eaque alias explicabo excepturi quae molestias omnis
+          quod, tenetur consequatur odit voluptatem dignissimos earum voluptate
+          tempore cumque rerum? Accusamus nulla accusantium consequatur?
+        </div>
+        <article class="article">
+          이 요소에 닿으면 스크롤 되는 동안 고정되어 이동합니다.
+        </article>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque alias
+          explicabo excepturi quae molestias omnis quod, tenetur consequatur
+          odit voluptatem dignissimos earum voluptate tempore cumque rerum?
+          Accusamus nulla accusantium consequatur? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Eaque alias explicabo excepturi quae
+          molestias omnis quod, tenetur consequatur odit voluptatem dignissimos
+          earum voluptate tempore cumque rerum? Accusamus Lorem ipsum dolor sit
+          amet consectetur adipisicing elit. Eaque alias explicabo excepturi
+          quae molestias omnis quod, tenetur consequatur odit voluptatem
+          dignissimos earum voluptate tempore cumque rerum? Accusamus nulla
+          accusantium consequatur? Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eaque alias explicabo excepturi quae molestias omnis
+          quod, tenetur consequatur odit voluptatem dignissimos earum voluptate
+          tempore cumque rerum? Accusamus nulla accusantium consequatur?
+        </div>
+      </main>
+    </section>
+
+    <button class="btn-top">
+      이 버튼은 항상 화면의 오른쪽 하단에 위치합니다.
+    </button>
+  </body>
+</html>

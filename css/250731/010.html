@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 3px dashed red;
+      }
+      h2 {
+        float: right;
+        float: left;
+        background-color: pink;
+        height: 300px;
+        /* float 속성을 사용하게 되면 오소가 일반적을 흐름에서 벗어남 */
+        /* 부모 요소는 float 속성이 있는 자식 요소를 자식으로 인지X */
+      }
+      img {
+        float: left;
+        float: right;
+        width: 100px;
+      }
+      p {
+        /* float 배치 해제 */
+        /* clear: right;
+        clear: both; */
+      }
+      /* 부모 요소가 float 속성이 있는 자식 요소 높이 인지하기 */
+      .container {
+        /* 1. height 지정 */
+        /* 유연한 레이아웃을 만들수 없다. */
+        /* height: 400px; */
+
+        /* 2. overflow:hidden */
+        /* BFC를 만듦: 내부 요소가 외부 요소에 영향을 X */
+        /* overflow: hidden; */
+
+        /* 4. display: flow-root */
+        /* BFC 생성 */
+        /* IE에서 사용이 불가 */
+        display: flow-root;
+      }
+
+      /* 3. clearfix 가상요소 */
+      /* 컨테이너에 추가 */
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      /* float는 과거에 레이아웃을 많이 사용 */
+      /* flexbox, grid를 이용해서 보통 레이아웃을 설정 */
+    </style>
+  </head>
+  <body>
+    <!-- float 신문이나, 칼럼, 잡지 이미지 주변에 있는 텍스트 레이아웃 -->
+    <div class="container">
+      <h2>Hello World</h2>
+      <img src="./images/weniv-garry.png" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias
+        sit ad exercitationem explicabo vero ipsum officia! Placeat, eum?
+        Adipisci labore quia ea ipsum blanditiis laborum magnam iusto placeat
+        non?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
+        veritatis aspernatur quam delectus quisquam provident sit ipsum
+        similique ut, illo possimus perferendis alias, fugiat unde sint facere
+        vero. Omnis, quos.lorem Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Harum odit dolorem perspiciatis neque culpa aspernatur
+        impedit ipsa quidem mollitia rem in corrupti non eligendi velit
+        expedita, est, id veritatis corporis!
+      </p>
+    </div>
+    <div style="background: orangered; padding: 10px">
+      여기에 요소가 오게되면 어떻게 화면에 보일까요?
+    </div>
+  </body>
+</html>
