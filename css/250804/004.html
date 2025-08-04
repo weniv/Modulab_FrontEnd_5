@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        width: 50px;
+        height: 50px;
+        background-color: pink;
+        border: 1px solid black;
+      }
+
+      .container {
+        display: grid;
+        background-color: #ddd;
+
+        /* 열 방향으로 설정 */
+        grid-template-columns: 100px 200px 300px;
+        grid-template-columns: 200px 200px;
+        grid-template-columns: 100px 100px 100px 100px;
+        /* repeat(count, ) */
+        grid-template-columns: repeat(4, 100px);
+        grid-template-columns: repeat(2, 100px 200px);
+        /* 1fr = fraction 분수 */
+        /* grid에서 사용되는 단위, 비율에 따라 크기를 가짐 */
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 500px 2fr;
+        grid-template-columns: repeat(3, 1fr);
+
+        /* 행 방향 설정 */
+        grid-template-rows: 100px 200px 300px;
+        /* template-rows에 명시되지 않은 행의 크기는 auto */
+        grid-auto-rows: 150px;
+        grid-template-rows: repeat(4, 100px);
+
+        grid-template-rows: repeat(3, minmax(200px, auto));
+      }
+    </style>
+  </head>
+  <body>
+    <!-- grid는 행과 열 속성이 있는 2차원 레이아웃 -->
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </body>
+</html>

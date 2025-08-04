@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container1 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .container2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(50px, 1fr) 2fr 3fr;
+        gap: 20px 30px;
+      }
+      .container2 .item {
+        background-color: greenyellow;
+        width: auto;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 첫번째 컨테이너 -->
+    <!-- 자식 요소가 100px * 100px 정사각형, 12개의 아이템-->
+    <!-- 자동으로 열의 개수를 계산, 수평 방향으로 가운데 정렬 -->
+    <!-- 간격은 10px -->
+    <div class="container1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+    </div>
+
+    <!-- 두번째 컨테이너 -->
+    <!-- 자식요소의 너비가 똑같은 비율 -->
+    <!-- 높이는 1 : 2 : 3 -->
+    <!-- 아이템의 개수는 9개 -->
+    <div class="container2">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+    </div>
+  </body>
+</html>

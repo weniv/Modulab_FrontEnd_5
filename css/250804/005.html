@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        border: 1px solid black;
+      }
+
+      .container {
+        display: grid;
+        background-color: #ddd;
+
+        /* auto-fill, auto-fit */
+        /* 들어갈 수 있는 개수를 자동으로 계산 */
+        grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+
+        /* gap */
+        gap: 10px;
+        /* 행 사이 간격, 열 사이 간격 */
+        gap: 20px 40px;
+
+        /* 정렬 */
+        grid-template-columns: repeat(3, 150px);
+        grid-template-rows: repeat(4, 150px);
+
+        /* 1. 트랙 정렬 */
+        height: 90vh;
+        /* 수직 정렬 */
+        align-content: center;
+        align-content: start;
+        align-content: end;
+        align-content: space-between;
+        align-content: space-around;
+        align-content: space-evenly;
+
+        /* 수평 정렬 */
+        justify-content: center;
+        justify-content: start;
+        justify-content: end;
+        justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly;
+
+        /* 2. 셀을 기준으로 아이템을 정렬 */
+        /* 수직 아이템 정렬 */
+        align-items: center;
+        align-items: end;
+        align-items: start;
+
+        /* 수평 아이템 정렬 */
+        justify-items: center;
+        justify-items: start;
+        justify-items: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+    </div>
+  </body>
+</html>

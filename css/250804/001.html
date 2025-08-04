@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        width: 80px;
+        height: 80px;
+        background-color: skyblue;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* flex 부모 요소에게 주는 속성 -> 자식 요소들이 1차원의 레이아웃 */
+      .container {
+        background-color: #ddd;
+        display: flex;
+
+        /* 축의 방향 (주축) */
+        flex-direction: row;
+        flex-direction: column;
+        flex-direction: row-reverse;
+        flex-direction: column-reverse;
+
+        flex-direction: row;
+
+        /* 주축 방향 정렬 */
+        justify-content: flex-start;
+        justify-content: flex-end;
+        justify-content: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly;
+
+        /* 교차축 방향 정렬 */
+        .item {
+          /* width: auto;
+          height: auto; */
+        }
+        height: 200px;
+        align-items: stretch;
+        align-items: flex-start;
+        align-items: flex-end;
+        align-items: center;
+
+        /* 줄바꿈 */
+        flex-wrap: wrap;
+        /* flex-flow: direction wrap */
+        flex-flow: row wrap;
+
+        /* align-content */
+        /* flex-wrap: wrap 속성이 있을때 동작 */
+        align-content: flex-start;
+        align-content: flex-end;
+        align-content: center;
+        align-content: space-between;
+        align-content: space-around;
+        align-content: space-evenly;
+
+        /* gap */
+        justify-content: flex-start;
+        gap: 10px;
+        gap: 20px 30px;
+      }
+      .container.column {
+        flex-direction: column;
+        height: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>flex-direction: row</h2>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+    <h2>flex-direction: column</h2>
+    <div class="container column">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </body>
+</html>

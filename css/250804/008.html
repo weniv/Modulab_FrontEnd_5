@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: 100px 1fr 100px;
+        grid-template-rows: 60px 200px 200px 100px;
+        /* 빈 공간은 .으로 표현 */
+        grid-template-areas:
+          "header header header"
+          "aside main nav"
+          "aside main ."
+          "footer footer footer";
+      }
+      header {
+        background-color: pink;
+        grid-area: header;
+      }
+      nav {
+        background-color: yellowgreen;
+        grid-area: nav;
+      }
+      main {
+        background-color: skyblue;
+        grid-area: main;
+      }
+      aside {
+        background-color: orange;
+        grid-area: aside;
+      }
+      footer {
+        background-color: plum;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>header</header>
+      <nav>nav</nav>
+      <main>main</main>
+      <aside>aside</aside>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

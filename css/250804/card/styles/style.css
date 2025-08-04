@@ -1,0 +1,82 @@
+/* font */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* utils */
+.multi-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* reset */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* 10px */
+}
+body {
+  font-size: 1.6rem; /* 16px */
+  font-family: "Pretendard", system-ui;
+}
+:root {
+  --main-text: #29363d;
+  --sub-text: #5a6a72;
+  --bg-color: #fff;
+}
+
+.post-card {
+  width: 28.8rem; /* width: 288px */
+  border-radius: 0.8rem;
+  background-color: var(--bg-color);
+  box-shadow: 2px 2px 8px 0px #0000001a;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.post-card .thumbnail-img {
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.content-cont {
+  padding: 2rem 1.6rem 1.6rem;
+  color: var(--main-text);
+}
+
+.content-cont .post-title {
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.content-cont .post-content {
+  font-size: 1.2rem;
+  line-height: 160%;
+  margin: 1.6rem 0;
+  color: var(--sub-text);
+}
+
+.content-cont .more-link {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--main-text);
+  padding: 0.3rem 0.6rem;
+}

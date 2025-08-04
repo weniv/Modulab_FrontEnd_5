@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        box-sizing: border-box;
+        background-color: skyblue;
+        padding: 10px;
+      }
+      .container {
+        display: flex;
+        background-color: #ddd;
+        min-height: 30vh;
+
+        /* 방향(기본값) */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* flex-basis 초기 크기를 설정 */
+      /* direction이 row이면 width, direction이 column이면 height */
+      .item:nth-child(1) {
+        flex-basis: 100px;
+      }
+      .item:nth-child(3) {
+        /* html 16px -> 10rem은 160px */
+        flex-basis: 10rem;
+      }
+      /* flex-grow: 여분 공간을 어떤 비율로 나눌지 결정 */
+      /* flex-grow:0; */
+      .item:nth-child(2) {
+        flex-grow: 1;
+      }
+      .item:nth-child(4) {
+        flex-grow: 2;
+      }
+      .item {
+        /* 요소들에게 동일한 크기를 할당 */
+        /* flex-basis: 0 !important;
+        flex-grow: 1 !important; */
+      }
+
+      /* flex-shrink 줄어드는 크기 비율을 지정 */
+      .item:nth-child(2) {
+        flex-basis: 100px;
+        flex-shrink: 0;
+      }
+      .item:nth-child(3) {
+        flex-shrink: 2;
+      }
+      .item:nth-child(4) {
+        flex-shrink: 4;
+      }
+
+      .item:nth-child(3) {
+        /* flex: flex-grow flex-shrink flex-basis */
+        flex: 2 1 150px;
+        flex: 2 0 150px;
+
+        /* flex-grow:0 flex-shrink:0 flex-basis:auto */
+        flex: none;
+        /* flex-grow:1 flex-shrink:1 flex-basis:auto */
+        flex: auto;
+
+        /* 숫자가 1개면 -> flex-shrink:1 flex-basis:0으로 동작 */
+        flex: 1;
+      }
+
+      /* 개별 아이템에 대한 교차축 정렬 */
+      .item:nth-child(3) {
+        align-self: flex-start;
+      }
+      .item:nth-child(2) {
+        align-self: flex-end;
+      }
+      .item:nth-child(5) {
+        align-self: stretch;
+      }
+
+      /* order 속성 */
+      /* 숫자가 작을수록 앞으로 배치 */
+      /* 숫자가 동일하다면 마크업 순서대로 배치 */
+      .item:nth-child(5) {
+        order: -2;
+      }
+      .item:nth-child(1) {
+        order: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+  </body>
+</html>
