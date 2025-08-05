@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        /* transition: 변화, transform, color 어떻게 변화하는 지를 나타내는 속성 */
+        /* display, position -> transition 적용X */
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+        background-color: #eee;
+
+        /* transition: all 1s; */
+
+        /* transition-property: 전환효과를 적용할 속성 */
+        transition-property: background-color, color;
+        /* 모든 속성 */
+        transition-property: all;
+
+        /* 전환효과의 시간 */
+        transition-duration: 3s;
+        transition-duration: 0.5s;
+        transition-duration: 3s;
+
+        /* 전환효과의 타이밍 함수 */
+        transition-timing-function: ease;
+        transition-timing-function: cubic-bezier(0.57, -0.04, 0.57, 1.16);
+        transition-timing-function: linear;
+        /* 단계별로 변경이 발생 */
+        transition-timing-function: steps(3);
+        transition-timing-function: linear;
+
+        /* delay 지연 */
+        /* 지연시간이 지난 후에 transition 발생 */
+        transition-delay: 3s;
+        transition-delay: -1s;
+
+        transition: all 2s ease-in-out 1s;
+
+        /* 각 속성마다 다른 transition 효과를 주고싶을때는 쉼표로 구분 */
+        transition: none;
+        transition: color 2s ease-in, transform 5s linear,
+          background-color 5s steps(4);
+      }
+      .box:hover {
+        background-color: orangered;
+        color: white;
+        transform: translateX(100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Hello World</h2>
+    </div>
+  </body>
+</html>
