@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* img크기: 1920 × 326 */
+      .licat {
+        width: 168px;
+        height: 200px;
+
+        background: orange url("./images/steps-licat.png") no-repeat top left /
+          auto 100%;
+
+        animation: move-licat 0.5s steps(6) infinite;
+      }
+
+      @keyframes move-licat {
+        0% {
+          background-position: top left;
+        }
+        100% {
+          background-position: top right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="licat"></div>
+  </body>
+</html>

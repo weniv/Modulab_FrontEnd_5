@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1. 세로 방향인 경우에는 세로 배치, 가로 방향인 경우 가로로 배치 */
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        /* CSS 안에 중첩해서 작성 (css nesting) */
+        /* 방향을 orientation -> 세로 potrait, 가로 Landscape */
+        /* https://paullab.co.kr/ */
+        @media screen and (orientation: landscape) {
+          flex-direction: row;
+        }
+      }
+
+      /* 화면을 출력할때 사용되는 속성 */
+      @media print {
+        header,
+        footer {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>header</header>
+      <main>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente,
+        aliquam. Natus exercitationem repudiandae voluptates fuga, fugit,
+        perferendis dolores voluptatibus in est quibusdam consequuntur iste
+        ratione excepturi officiis ad id dignissimos? Delectus quia rerum
+        numquam labore praesentium, cum veniam saepe consequatur eius quaerat
+        tempore esse doloribus temporibus. Modi, quo voluptatem. Odit error
+        reprehenderit adipisci, at in optio illo reiciendis possimus labore.
+      </main>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

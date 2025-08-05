@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 100px auto;
+
+        /* animation 단축속성 */
+        /* 이 요소에 등록한 애니메이션 이름 */
+        animation-name: move;
+
+        /* 애니메이션 진행 속도 */
+        animation-duration: 2s;
+
+        /* timing-function */
+        animation-timing-function: ease;
+        animation-timing-function: ease-in;
+        animation-timing-function: ease-in-out;
+        animation-timing-function: linear;
+        /* 개발자 도구로도 확인이 가능하다 */
+        animation-timing-function: cubic-bezier(0.71, 0.02, 0.38, 1.02);
+        animation-timing-function: steps(5);
+
+        /* 시작 시간을 지연 */
+        animation-delay: 2s;
+        animation-delay: -2s;
+        animation-delay: 0s;
+
+        /* 반복횟수 */
+        animation-iteration-count: 3;
+        animation-iteration-count: infinite;
+
+        /* 재생 방향 */
+        animation-direction: normal;
+        /* 100% -> 0% */
+        animation-direction: reverse;
+        /* 0 -> 100 -> 0 -> 100 */
+        animation-direction: alternate;
+        /* 100 -> 0 -> 100 -> 0  */
+        animation-direction: alternate-reverse;
+
+        animation-iteration-count: 1;
+        animation-direction: normal;
+
+        /* 시작과 마지막 키프레임 유지 */
+        /* 애니메이션 종료된후, 마지막 키프레임을 유지 */
+        animation-fill-mode: forwards;
+        /* 애니메이션이 시작할때, 첫키프레임을 유지 */
+        animation-delay: 2s;
+        animation-fill-mode: backwards;
+        animation-fill-mode: both;
+
+        /* animation */
+        animation: move 2s ease-in 0s infinite alternate backwards;
+
+        /* animation-play-state */
+        animation-play-state: running;
+      }
+      .box:hover {
+        animation-play-state: paused;
+      }
+      .circle {
+        width: 100px;
+        height: 100px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: auto;
+
+        animation: move 3s steps(10) 0s infinite alternate-reverse backwards;
+      }
+      /* 애니메이션 -> 요소에 적용 */
+      @keyframes move {
+        /* 시간 동안 %로 구분해서 작성 */
+        0% {
+          background-color: yellowgreen;
+          transform: translate(-200px) rotate(45deg);
+        }
+        50% {
+          background-color: skyblue;
+        }
+        100% {
+          background-color: green;
+          transform: translate(200px) scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="circle"></div>
+  </body>
+</html>

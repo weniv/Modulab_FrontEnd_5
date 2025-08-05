@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clock {
+        background-color: #eee;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        border-radius: 50%;
+        position: relative;
+      }
+      .hour {
+        width: 20px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: time-change 43200s linear infinite;
+        transform-origin: center bottom;
+      }
+      .min {
+        width: 10px;
+        height: 120px;
+        background-color: blue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: time-change 3600s linear infinite;
+        transform-origin: center bottom;
+      }
+      .sec {
+        width: 5px;
+        height: 140px;
+        background-color: green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: time-change 60s linear infinite;
+        transform-origin: center bottom;
+      }
+
+      @keyframes time-change {
+        0% {
+          transform: translate(-50%, -100%) rotate(0);
+        }
+        100% {
+          transform: translate(-50%, -100%) rotate(360deg);
+        }
+      }
+
+      .building {
+        width: 113px;
+        height: 176px;
+        border: 1px solid red;
+        margin: 50px auto;
+
+        background: url("./images/building.png") no-repeat top left / auto 100%;
+        animation: building-up 5s steps(33) infinite alternate;
+      }
+
+      @keyframes building-up {
+        0% {
+          background-position: top left;
+        }
+        100% {
+          background-position: top right;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 실습1. 시계 -->
+    <div class="clock">
+      <div class="hour"></div>
+      <div class="min"></div>
+      <div class="sec"></div>
+    </div>
+
+    <!-- 실습2. 빌딩 -->
+    <!-- 빌딩이미지를 이용(34개의 프레임) -->
+    <div class="building"></div>
+  </body>
+</html>
