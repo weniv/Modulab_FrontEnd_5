@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+      }
+      .container img {
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 디바이스 환경에 따른 적절한 이미지 선택 -->
+    <!-- 1. 해상도 전환: 같은 이미지를 다른 크기로 제공 -->
+    <img
+      src="./images/chilli_360px.jpg"
+      srcset="
+        ./images/chilli_360px.jpg   360w,
+        ./images/chilli_720px.jpg   720w,
+        ./images/chilli_1440px.jpg 1440w
+      "
+      sizes="(max-width:600px) 300px, (max-width:900px) 600px, 1200px"
+      alt="위니브 칠리 캐릭터"
+    />
+
+    <!-- 화면의 밀도 -->
+    <!-- 애플 레티나 디스플레이, css의 1px 기기의 1px 개수 차이 -->
+    <!-- 텍스트, svg : 벡터, 고해상도 -->
+    <!-- 이미지: 확대, 계단현상, 이미지 보간 -> 이미지 흐림 -->
+    <div class="container">
+      <img src="./images/chilli_720px.jpg" alt="" />
+      <img src="./images/chilli_1440px.jpg" alt="" />
+    </div>
+    <!-- 크기가 큰 이미지를 넣어주면 해결! -->
+    <img
+      src="./images/chilli_360px.jpg"
+      srcset="
+        ./images/chilli_360px.jpg   1x,
+        ./images/chilli_720px.jpg   2x,
+        ./images/chillie_1440px.jpg 3x
+      "
+      alt=""
+    />
+  </body>
+</html>

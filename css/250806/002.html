@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 미디어 쿼리에 따라서 이미지를 선택 -->
+    <picture>
+      <source media="(min-width:992px)" srcset="./images/lication-chilli.png" />
+      <source
+        media="(max-width: 991px)"
+        srcset="./images/lication-chilli2.png"
+      />
+      <img src="./images/lication-chilli2.png" alt="" />
+    </picture>
+
+    <!-- 최신 이미지 포맷 -->
+    <picture>
+      <!-- type MIME 타입 -->
+      <source srcset="./images/weniv-licat.webp" type="image/webp" />
+      <source srcset="./images/weniv-licat.avif" type="image/avif" />
+      <img src="./images/weniv-licat.png" alt="" />
+    </picture>
+  </body>
+</html>
