@@ -7,13 +7,18 @@
 </head>
 <body>
   <script>
-    const a = 100;
-    const b = '100';
-    const c = Number(b);
-    // console.log(a === c);
+    // let result = (age >= 20) ? '성인' : '미성년자';
 
-    // console.log(a < 100 || a === 100);
-    console.log(a < 100 && a === 100);
+    let age = 22;
+    let result;
+
+    if (age >= 20) {
+      result = '성인';
+    } else {
+      result = '미성년자';
+    }
+
+    console.log(result);
   </script>
 </body>
 </html>

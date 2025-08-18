@@ -8,6 +8,7 @@
 <body>
   <script>
     function User(username) {
+      console.log(this instanceof User);
       if (!(this instanceof User)) {
         // this가 User의 인스턴스가 아닐 때 실행
         return new User(username);
@@ -20,11 +21,7 @@
     }
 
     const user1 = User('에렌'); // 인스턴스(instance)
-
-    for (let key in user1) {
-      // console.log(user1[key])
-      console.log(key + ": " + user1[key]);
-    }
+    user1.sayHi();
   </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+</head>
+<body>
+  <script>
+    // this
+    // 메서드를 실행한 주체 객체를 가리킨다
+    function hi() {
+      console.log(this);
+      console.log('안녕, 내 이름은 ' + this.username + '!!');
+    }
+
+    const user1 = {
+      username: '에렌',
+      sayHi: hi
+    };
+
+    const user2 = {
+      username: '미카사',
+      sayHi: hi
+    };
+
+    const user3 = {
+      username: '아르민',
+      sayHi: hi,
+      study: () => {
+        console.log(this); // Window
+        console.log(this.username + '은 공부 중..');
+      }
+    };
+
+    // user1.sayHi();
+    // user2.sayHi();
+    // hi();
+
+    user3.study();
+  </script>
+</body>
+</html>

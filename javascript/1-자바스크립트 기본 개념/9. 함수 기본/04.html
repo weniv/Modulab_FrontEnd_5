@@ -7,13 +7,15 @@
 </head>
 <body>
   <script>
-    const a = 100;
-    const b = '100';
-    const c = Number(b);
-    // console.log(a === c);
+    let user = "Tom"; // 전역변수
 
-    // console.log(a < 100 || a === 100);
-    console.log(a < 100 && a === 100);
+    function greet() {
+      let message = "Hello, " + user; // 지역변수
+      console.log(message);
+    }
+
+    greet();
+    console.log(message);
   </script>
 </body>
 </html>

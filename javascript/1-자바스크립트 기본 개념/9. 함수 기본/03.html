@@ -7,13 +7,11 @@
 </head>
 <body>
   <script>
-    const a = 100;
-    const b = '100';
-    const c = Number(b);
-    // console.log(a === c);
+    function showPrice(value = 1000) {
+      console.log(`가격은 ${value}원입니다.`);
+    }
 
-    // console.log(a < 100 || a === 100);
-    console.log(a < 100 && a === 100);
+    showPrice(20000);
   </script>
 </body>
 </html>

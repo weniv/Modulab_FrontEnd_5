@@ -6,6 +6,41 @@
   <title>JavaScript</title>
 </head>
 <body>
-  
+  <script>
+    { // 블럭 scope 생성
+      let a = 100;
+      console.log(a);
+
+      function aa() {
+        a = 7;
+      }
+
+      function bb() {
+        a;
+      }
+
+      aa();
+      bb();
+      console.log(a);
+    }
+
+    // (function () {
+    //   var a = 100;
+
+    //   function aa() {
+    //     console.log(a);
+    //   }
+
+    //   function bb() {
+        
+    //   }
+
+    //   aa();
+    // })();
+  </script>
+  <script src="01.js"></script>
+  <script>
+    // console.log(a);
+  </script>
 </body>
 </html>

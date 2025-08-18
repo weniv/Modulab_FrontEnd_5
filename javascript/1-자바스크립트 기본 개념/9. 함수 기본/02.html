@@ -7,13 +7,14 @@
 </head>
 <body>
   <script>
-    const a = 100;
-    const b = '100';
-    const c = Number(b);
-    // console.log(a === c);
+    function add(a, b) {
+      console.log(a + b);
+      // return a + b;
+      console.log('return 아래에 있는 코드');
+    }
 
-    // console.log(a < 100 || a === 100);
-    console.log(a < 100 && a === 100);
+    const result = add(10, 20);
+    // console.log(result);
   </script>
 </body>
 </html>

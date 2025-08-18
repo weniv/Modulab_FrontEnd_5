@@ -6,6 +6,26 @@
   <title>JavaScript</title>
 </head>
 <body>
-  
+  <script>
+    // this
+    // 메서드를 실행한 주체 객체를 가리킨다    
+
+    const user1 = {
+      username: '에렌',
+      sayHi() {
+        console.log('안녕, 나는 ' + this.username + '이야. 만나서 반가워.');
+      }
+    };
+
+    const user2 = {
+      username: '미카사',
+      sayHi() {
+        console.log('안녕, 나는 ' + this.username + '이야. 만나서 반가워.');
+      }
+    };
+
+    user1.sayHi();
+    user2.sayHi();
+  </script>
 </body>
 </html>

@@ -6,6 +6,19 @@
   <title>JavaScript</title>
 </head>
 <body>
-  
+  <script>
+    function displayName(name) {
+      console.log(name);
+    }
+
+    function showName(name, callback) {
+      setTimeout(function () {
+        callback(name);
+      }, 2000);
+    }
+
+    // displayName(1);
+    showName('유미르', displayName);
+  </script>
 </body>
 </html>

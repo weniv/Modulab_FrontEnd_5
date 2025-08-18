@@ -6,6 +6,26 @@
   <title>JavaScript</title>
 </head>
 <body>
-  
+  <script>
+    const user = {};
+    user.name = '임영후';
+    user.age = 19;
+    // console.log(user);
+
+    const user2 = {
+      name1: '김예슬',
+      name2: '박미정',
+      age: 20,
+    };
+    // console.log(user2);
+
+    // console.log(user2.name1);
+    let num = 1;
+    // console.log(user2['name' + num]);
+    console.log(user2[`name${num}`]);
+
+    delete user2.name2;
+    console.log(user2);
+  </script>
 </body>
 </html>

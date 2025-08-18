@@ -6,6 +6,25 @@
   <title>JavaScript</title>
 </head>
 <body>
-  
+  <script>
+    // const user1 = {
+    //   username: '에렌',
+    //   sayHi() {
+    //     console.log('안녕, 나는 ' + this.username + '이야. 만나서 반가워.');
+    //   }
+    // };
+
+    function User(username) {
+      // console.log(this);
+      this.username = username;
+      this.sayHi = function() {
+        console.log('안녕, 나는 ' + this.username + '이야. 만나서 반가워.');
+      };
+    }
+
+    const user1 = new User('에렌'); // 인스턴스(instance)
+    const user2 = new User('리바이'); // 인스턴스(instance)
+    user2.sayHi();
+  </script>
 </body>
 </html>
