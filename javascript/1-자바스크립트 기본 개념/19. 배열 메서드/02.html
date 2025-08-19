@@ -7,19 +7,12 @@
 </head>
 <body>
   <script>
-    let nums = [1, 2, 3, 4, 5];
-
-    nums.push('육');
-
-    console.log(nums);
-
-    nums.pop();
-    console.log(nums);
-
-    nums.unshift('영');
-    console.log(nums);
-    nums.shift();
-    console.log(nums);
+    let names = ["Kim", "Lee", "Park"];
+    let upper = names.map(name => name.toUpperCase());
+    console.log(upper === names);
+    upper.push('zzz');
+    console.log(upper);
+    console.log(names);
   </script>
 </body>
 </html>

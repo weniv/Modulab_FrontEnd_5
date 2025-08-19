@@ -15,16 +15,22 @@
       '러브 액츄얼리'
     ];
 
-    // console.log(movies[4]);
-    // console.log(movies.length);
+    const 영화 = [...movies];
 
-    // for (let i = 0; i < movies.length; i++) {
-    //   console.log(movies[i]);
-    // }
 
-    for (let item of movies) {
-      console.log(item);
+    const arr = [1, 2, 3];
+    function sum(a, b, c) {
+      return a + b + c;
     }
+    console.log( sum(...arr) ); // sum(1, 2, 3)
+
+    const user = {
+      name: '김미미',
+      age: 92,
+      city: '서울'
+    }
+    const copy = { ...user, city: '제주' };
+    console.log(copy);
   </script>
 </body>
 </html>

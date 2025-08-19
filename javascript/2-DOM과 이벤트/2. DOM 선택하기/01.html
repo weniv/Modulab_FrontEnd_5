@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1 id="title">안녕!</h1>
+  </header>
+  <p class="text">첫 번째 문장</p>
+  <p class="text">두 번째 문장</p>
+  <p class="text">세 번째 문장</p>
+  <p class="text">네 번째 문장</p>
+
+  <script>
+    const heading = document.getElementById('title');
+    // console.log(heading.textContent);
+    // heading.textContent = 'ㅋㅋㅋㅋㅋ';
+    heading.innerHTML = '<small>오잉</small>';
+
+    const headerElem = document.querySelector('header');
+    // console.log(headerElem.textContent);
+    // console.log(headerElem.innerHTML);
+
+    const textElem = document.querySelector('.text');
+    // console.log(textElem);
+
+    const textElems = document.querySelectorAll('.text');
+    textElems[2].style.background = 'red';
+  </script>
+</body>
+</html>

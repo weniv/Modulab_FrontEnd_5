@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      font-style: italic;
+      color: purple;
+    }
+
+    .special {
+      font-size: 100px;
+      background-color: hotpink;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">안녕!</h1>
+  </header>
+  <img id="pic" src="https://studiomeal.com/wp-content/uploads/2020/01/sprite-ilbuni-hi-gif-200.gif" alt="일분이">
+  <p class="text">첫 번째 문장</p>
+  <p class="text">두 번째 문장</p>
+  <p class="text">세 번째 문장</p>
+  <p class="text">네 번째 문장</p>
+
+  <script>
+    const pic = document.querySelector('#pic');
+    setTimeout(() => {
+      pic.setAttribute('src', 'https://studiomeal.com/wp-content/themes/studiomeal2021/images/website-title.jpg');
+      pic.setAttribute('title', '일분이');
+
+      console.log( pic.getAttribute('src') );
+    }, 1000);
+
+    const text1 = document.querySelector('.text');
+    // text1.style.backgroundColor = 'dodgerblue';
+    // text1.style.fontSize = '100px';
+    text1.classList.add('special');
+    // text1.className = 'special';
+
+  </script>
+</body>
+</html>

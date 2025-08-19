@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      font-style: italic;
+      color: purple;
+    }
+
+    .special {
+      font-size: 100px;
+      background-color: hotpink;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">안녕!</h1>
+  </header>
+  <button onclick="sayHi()">클릭</button>
+  <img id="pic" src="https://studiomeal.com/wp-content/uploads/2020/01/sprite-ilbuni-hi-gif-200.gif" alt="일분이">
+  <p class="text special">첫 번째 문장</p>
+  <p class="text">두 번째 문장</p>
+  <p class="text">세 번째 문장</p>
+  <p class="text">네 번째 문장</p>
+
+  <script>
+    const pic = document.getElementById('pic');
+    const text1 = document.querySelector('.text');
+
+    function sayHi() {
+      text1.classList.toggle('special');
+    }
+  </script>
+</body>
+</html>
