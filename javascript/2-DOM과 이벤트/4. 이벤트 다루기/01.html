@@ -33,6 +33,12 @@
 
     function sayHi() {
       text1.classList.toggle('special');
+      // text1.style.border = '5px dashed blue';
+      // text1.style.outline = '5px solid green';
+      text1.style.cssText = `
+        border: ${Math.random()*50+10}px dashed blue;
+        outline: 5px solid green;
+      `;
     }
   </script>
 </body>

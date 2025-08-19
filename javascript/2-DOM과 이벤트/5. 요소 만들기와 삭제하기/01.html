@@ -4,8 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .list-item {
+      list-style: none;
+      margin: 3px;
+      padding: 0.5rem;
+      background: pink;
+    }
+  </style>
 </head>
 <body>
-  
+  <ul class="list"></ul>
+
+  <script>
+    const fruits = [
+      {
+        name: '사과',
+        pic: "🍎"
+      },
+      {
+        name: '바나나',
+        pic: "🍌"
+      },
+      {
+        name: '포도',
+        pic: "🍇"
+      }
+    ];
+    console.time('A');
+    const listElem = document.querySelector('.list');
+    console.timeEnd('A');
+
+    console.time('B');
+    for (let i = 0; i < fruits.length; i++) {
+      const liElem = document.createElement('li');
+      liElem.classList.add('list-item');
+      liElem.innerHTML = `
+        ${fruits[i].pic}
+        <strong>${fruits[i].name}</strong>
+      `;
+      
+      listElem.append(liElem); 
+
+      // Event
+      liElem.addEventListener('click', function () {
+        // console.log(this);
+        // listElem.removeChild(this);
+        this.remove();
+        // listElem.innerHTML = '';
+      });
+    }
+    console.timeEnd('B');
+  </script>
 </body>
 </html>

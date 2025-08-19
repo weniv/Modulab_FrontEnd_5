@@ -4,8 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    button[data-count] {
+      font-size: 30px;
+    }
+  </style>
 </head>
 <body>
-  
+  <button class="likeBtn" data-user-id="minji" data-count="5">
+    좋아요
+    <span class="like-count">5</span>
+  </button>
+  <button class="likeBtn" data-user-id="dongsu" data-count="1">
+    좋아요
+    <span class="like-count">1</span>
+  </button>
+  <button class="likeBtn" data-user-id="misa" data-count="95">
+    좋아요
+    <span class="like-count">95</span>
+  </button>
+
+  <script>
+    const btn = document.querySelector('.likeBtn[data-user-id="misa"]');
+    const count = +btn.dataset.count;
+    // console.log(btn.dataset.count, typeof btn.dataset.count);
+    // console.log(count, typeof count);
+
+    btn.addEventListener('click', () => {
+      let num = +btn.dataset.count;
+      num++;
+      btn.dataset.count = num;
+      btn.querySelector('.like-count').innerHTML = num;
+      console.log(num);
+    });
+  </script>
 </body>
 </html>

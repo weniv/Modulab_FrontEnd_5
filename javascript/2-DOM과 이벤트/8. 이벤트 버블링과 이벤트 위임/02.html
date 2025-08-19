@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 300px;
+      height: 300px;
+      border: 5px solid crimson;
+      cursor: crosshair;
+      transform: translateX(-105%);
+      transition: 0.5s;
+    }
+
+    .box-on {
+      transform: translateX(0);
+    }
+
+    .btn {
+      position: relative;
+      z-index: 10;
+      margin: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae aut suscipit nihil ullam accusamus harum voluptatum est, amet aperiam vel neque explicabo vero corrupti voluptatem id placeat dicta quos itaque necessitatibus delectus odio inventore cumque? Atque cum natus nulla ullam? Officiis esse ipsa animi eligendi et commodi quaerat ullam illum?
+  </div>
+  <button class="btn btn-a">Button A</button>
+
+  <script>
+    const box = document.querySelector('.box');
+    const btn = document.querySelector('.btn-a');
+
+    box.addEventListener('click', function (e) {
+      console.log('박스 클릭');
+      e.stopPropagation();
+    });
+
+    btn.addEventListener('click', function (e) {
+      console.log('버튼 클릭: 메뉴 열기');
+      e.stopPropagation();
+      box.classList.toggle('box-on');
+    })
+
+    document.body.addEventListener('click', function (e) {
+      console.log('바디 클릭: 메뉴 닫기')
+      box.classList.remove('box-on');
+    });
+  </script>
+</body>
+</html>

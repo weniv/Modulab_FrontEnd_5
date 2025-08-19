@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #title {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      margin: 0;
+      background: dodgerblue;
+      transition: 1s;
+    }
+
+    .btn {
+      margin: 100px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">안녕!</h1>
+  </header>
+  <button class="btn">클릭</button>
+
+  <script>
+    const title = document.getElementById('title');
+    const btn = document.querySelector('.btn');
+
+    // Event 바인딩(binding)
+    // btn.onclick = () => {
+    //   clickHandler();
+    //   clickHandler2();
+    // };
+    btn.addEventListener('click', clickHandler);
+    // btn.addEventListener('click', clickHandler2);
+
+    function clickHandler() {
+      title.style.transform = `
+        translate(
+          ${Math.random()*500 + 100}px,
+          ${Math.random()*500 + 100}px
+        )`;
+
+      // title.style.cssText = `
+      //   left: ${Math.random()*500 + 100}px;
+      //   top: ${Math.random()*500 + 100}px;
+      // `;
+    }
+
+    // function clickHandler2() {
+    //   console.log(22);
+    // }
+  </script>
+</body>
+</html>
