@@ -54,7 +54,7 @@
 
     btn.addEventListener('click', function (e) {
       console.log('버튼 클릭: 메뉴 열기');
-      e.stopPropagation();
+      e.stopPropagation(); // 이벤트 전파 방지
       box.classList.toggle('box-on');
     })
 

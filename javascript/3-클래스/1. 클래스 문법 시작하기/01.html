@@ -6,6 +6,38 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <script>
+    class User {
+      constructor(username, hp = 100) {
+        this.username = username;
+        this.hp = hp;
+      }
+
+      sayHello() {
+        console.log('안녕, 나는 ' + this.username + '이야. 나는 체력이 ' + this.hp + '이란다.');
+      }
+    }
+
+    class Manager extends User {
+      constructor(username, hp, car) {
+        super(username, hp);
+        this.car = car;
+      }
+
+      drive() {
+        console.log(`${this.username}이(가) ${this.car}을(를) 운전 중`);
+      }
+    }
+
+    const user1 = new User('에렌'); // instance
+    const user2 = new User('아르민', 70);
+    const user3 = new User('미카사', 20000);
+    user1.sayHello();
+    user2.sayHello();
+    user3.sayHello();
+
+    const user4 = new Manager('한지', 120, '픽업트럭');
+    user4.drive();
+  </script>
 </body>
 </html>

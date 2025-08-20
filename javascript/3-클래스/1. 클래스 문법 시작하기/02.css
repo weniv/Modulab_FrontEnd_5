@@ -1,0 +1,9 @@
+.car {
+  font-size: 30px;
+}
+
+.road {
+  width: 500px;
+  height: 100px;
+  background: lightgray;
+}
