@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 5px dotted lime;
+    }
+
+    @keyframes rotation {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .box {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      color: white;
+      background: purple;
+      opacity: 0.7;
+      cursor: pointer;
+      animation: 1s rotation infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+  </div>
+  <div id="message"></div>
+
+  <script>
+    // 이벤트 위임 사용
+    // 각각의 박스에 data-id를 1부터 5까지 설정해주시고
+    // 클릭한 박스는 사라지게 해주세요
+    const container = document.querySelector('.container');
+    const boxes = document.querySelectorAll('.box');
+    const message = document.getElementById('message');
+
+    let numberOfBoxes = boxes.length;
+
+    boxes.forEach((box, index) => {
+      box.dataset.id = index + 1;
+      box.style.cssText = `
+        left: ${Math.random() * 270}px;
+        top: ${Math.random() * 270}px;
+      `;
+    });
+
+    container.addEventListener('click', e => {
+      const box = e.target;
+      if (!box.classList.contains('box')) return;
+
+      box.remove();
+      numberOfBoxes--;
+      
+      if (numberOfBoxes === 0) {
+        message.textContent = '축하해요!!!';
+      }
+    });
+  </script>
+</body>
+</html>

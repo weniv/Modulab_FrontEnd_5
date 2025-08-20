@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .menu {
+      display: flex;
+      list-style: none;
+      background: red;
+    }
+
+    .menu-item {
+      margin: 3px;
+      padding: 10px;
+      background: skyblue;
+      cursor: pointer;
+    }
+
+    /* .menu-item > i,
+    .menu-item > span {
+      pointer-events: none;
+    } */
+
+    /* .wrapper {
+      pointer-events: none;
+    } */
+  </style>
+</head>
+<body>
+  <ul class="menu">
+    <li class="menu-item" data-id="1">
+      <div class="wrapper">
+        <i>🍕</i>
+        <span>피자</span>
+      </div>
+    </li>
+    <li class="menu-item" data-id="2">
+      <div class="wrapper">
+        <i>🍔</i>
+        <span>햄버거</span>
+      </div>
+    </li>
+    <li class="menu-item" data-id="3">
+      <div class="wrapper">
+        <i>🍜</i>
+        <span>라면</span>
+      </div>
+    </li>
+  </ul>
+
+  <script>
+    const menu = document.querySelector('.menu');
+    menu.addEventListener('click', e => {
+      console.log(e.target.closest('.menu-item'));
+      const currentMenu = e.target.closest('.menu-item');
+      if (!currentMenu) return;
+      // if (currentMenu) {
+      //   console.log(currentMenu.dataset.id);
+      // }
+    });
+  </script>
+</body>
+</html>

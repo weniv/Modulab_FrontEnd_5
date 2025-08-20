@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="signup-form">
+    <input name="username" type="text" placeholder="아이디"><br>
+    <input name="password" type="password" placeholder="비밀번호"><br>
+    <input name="email" type="email" placeholder="이메일"><br>
+    
+    <label><input type="radio" name="gender" value="female"> 여성</label>
+    <label><input type="radio" name="gender" value="male"> 남성</label>
+    <label><input type="radio" name="gender" value="none"> 선택안함</label><br>
+
+    <button>회원가입</button>
+  </form>
+
+  <p>
+    <a id="link-google" href="https://google.com">구글 방문</a>
+  </p>
+
+  <script>
+    const form = document.getElementById("signup-form");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // 이벤트의 기본 동작을 취소
+      console.log("폼이 전송됨 (페이지 새로고침 없음)");
+    });
+
+    document.querySelector('#link-google').addEventListener('click', e => {
+      e.preventDefault();
+      console.log(e.target.getAttribute('href'));
+    });
+  </script>
+</body>
+</html>

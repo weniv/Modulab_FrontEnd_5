@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 5px dotted lime;
+    }
+
+    @keyframes rotation {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .box {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      color: white;
+      background: purple;
+      opacity: 0.7;
+      cursor: pointer;
+      animation: 1s rotation infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+  </div>
+
+  <script>
+    // 각각의 박스에 data-id를 1부터 5까지 설정해주시고
+    // 클릭한 박스는 사라지게 해주세요
+    // let num = 1;
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach((box, index) => {
+      // box.dataset.id = num++;
+      box.dataset.id = index + 1;
+      box.style.cssText = `
+        left: ${Math.random() * 270}px;
+        top: ${Math.random() * 270}px;
+      `;
+
+      box.addEventListener('click', clickBoxHandler);
+    });
+
+    function clickBoxHandler(e) {
+      // this.remove();
+      e.currentTarget.remove();
+    }
+  </script>
+</body>
+</html>
