@@ -1,7 +1,7 @@
 const road = document.querySelector('.road');
 // let carY = -20;
 
-class Car {
+export class Car {
   static carY = -20;
 
   constructor(name, type='🚗') {
@@ -38,7 +38,7 @@ class Car {
   }
 }
 
-class PoliceCar extends Car {
+export class PoliceCar extends Car {
   constructor(name, type='🚓') {
     super(name, type);
     // this.element.addEventListener('dblclick', this.chase.bind(this));

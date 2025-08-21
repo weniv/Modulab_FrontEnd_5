@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구조분해할당으로 매개변수 쓰기</title>
+</head>
+<body>
+  <script>
+    // const foo = {
+    //   name: 'hihi',
+    //   age: 10
+    // };
+    // const { name, age } = foo;
+
+    class Animal {
+      constructor({ name = '이름모름', type = '종모름', age = '나이모름' }) {
+        // this.name = name || '이름모름';
+        // this.type = type || '종모름';
+        // this.age = age || '나이모름';
+        this.name = name;
+        this.type = type;
+        this.age = age;
+      }
+    }
+
+    const dog = new Animal({
+      age: 17,
+      type: '코카스파니엘',
+      name: '국',
+    });
+    console.log(dog.type);
+
+    const dog2 = new Animal({});
+    console.log(dog2.type);
+  </script>
+</body>
+</html>

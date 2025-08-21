@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매개변수 하나만 쓰기</title>
+</head>
+<body>
+  <script>
+    class Animal {
+      constructor(obj = {}) {
+        this.name = obj.name || '이름모름';
+        this.type = obj.type || '종모름';
+        this.age = obj.age || '나이모름';
+      }
+    }
+
+    const dog = new Animal({
+      age: 17,
+      type: '코카스파니엘',
+      name: '국',
+    });
+    console.log(dog.type);
+
+    const dog2 = new Animal();
+    console.log(dog2.type);
+  </script>
+</body>
+</html>

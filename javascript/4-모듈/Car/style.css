@@ -1,0 +1,25 @@
+input,
+button {
+  font-size: 1.5rem;
+}
+
+.car {
+  position: absolute;
+  right: 0;
+  font-size: 30px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.car-name {
+  font-size: 12px;
+  font-family: sans-serif;
+  background: white;
+}
+
+.road {
+  position: relative;
+  width: 500px;
+  height: 100px;
+  background: lightgray;
+}
