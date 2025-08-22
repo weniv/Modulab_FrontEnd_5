@@ -13,22 +13,45 @@ updateBalance();
 
 // Event
 // 입금
-depositBtn.addEventListener('click', () => {
-  const amount = +amountInput.value;
-  bankAccount.deposit(amount);
-  updateBalance();
-  addLog(`${amount.toLocaleString()}원 입금`);
-  amountInput.value = '';
-});
+// depositBtn.addEventListener('click', () => {
+//   const amount = +amountInput.value;
+//   bankAccount.deposit(amount);
+//   updateBalance();
+//   addLog(`${amount.toLocaleString()}원 입금`);
+//   amountInput.value = '';
+// });
 
 //출금
-withdrawBtn.addEventListener('click', () => {
-  const amount = +amountInput.value;
-  bankAccount.withdraw(amount);
-  updateBalance();
-  addLog(`${amount.toLocaleString()}원 출금`);
-  amountInput.value = '';
+// withdrawBtn.addEventListener('click', () => {
+//   const amount = +amountInput.value;
+//   bankAccount.withdraw(amount);
+//   updateBalance();
+//   addLog(`${amount.toLocaleString()}원 출금`);
+//   amountInput.value = '';
+// });
+
+depositBtn.addEventListener('click', () => {
+  handleTransaction('deposit');
 });
+
+withdrawBtn.addEventListener('click', () => {
+  handleTransaction('withdraw');
+});
+
+function handleTransaction(type) {
+  const amount = +amountInput.value;
+  if (type === 'deposit') {
+    //입금
+    bankAccount.deposit(amount);
+    addLog(`${amount.toLocaleString()}원 입금`);
+  } else if (type === 'withdraw') {
+    //출금
+    bankAccount.withdraw(amount);
+    addLog(`${amount.toLocaleString()}원 출금`);
+  }
+  updateBalance();
+  amountInput.value = '';
+}
 
 // localStorage에 저장
 function saveBalance(amount) {
