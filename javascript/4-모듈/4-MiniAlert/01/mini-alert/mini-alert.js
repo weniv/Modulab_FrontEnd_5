@@ -26,14 +26,16 @@ export default class MiniAlert {
     // Event
     const closeBtn = modal.querySelector('.mini-alert-close-btn');
     closeBtn.addEventListener('click', () => {
-      this.close();
+      // this.close();
+      close();
       // backdrop.remove();
       // if(onClose) onClose();
     });
 
     backdrop.addEventListener('click', () => {
       if (this.closeBackdrop) {
-        this.close(backdrop);
+        // this.close(backdrop);
+        close(backdrop);
       }
       // if (closeBackdrop) {
         // backdrop.remove();
@@ -45,16 +47,27 @@ export default class MiniAlert {
       e.stopPropagation();
     });
 
-  }
+    function close(target) {
+      backdrop.remove();
 
-  close(target) {
-    this.backdrop.remove();
-
-    if (
-      target !== this.backdrop
-      && typeof this.onClose === 'function'
-    ) {
-      this.onClose();
+      if (
+        target !== backdrop
+        && typeof onClose === 'function'
+      ) {
+        onClose();
+      }
     }
+
   }
+
+  // close(target) {
+  //   this.backdrop.remove();
+
+  //   if (
+  //     target !== this.backdrop
+  //     && typeof this.onClose === 'function'
+  //   ) {
+  //     this.onClose();
+  //   }
+  // }
 }
