@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MiniAlert</title>
-  <link rel="stylesheet" href="mini-alert/mini-alert.css">
+  <!-- <link rel="stylesheet" href="mini-alert/mini-alert.css"> -->
   <script src="mini-alert/mini-alert.js" type="module"></script>
 </head>
 <body>
@@ -21,16 +21,17 @@
   </div> -->
 
   <script type="module">
-    import MiniAlert from './mini-alert/mini-alert.js';
+    // window.MiniAlert으로 설정해두어서 import 안해도 사용 가능
+    // import MiniAlert from './mini-alert/mini-alert.js';
 
     document.getElementById('btn').addEventListener('click', () => {
-      new MiniAlert({
+      MiniAlert.fire({
         title: '오오',
         message: '축하합니다!',
         onClose: () => {
           console.log('미니얼럿이 닫히면서 실행되는 함수');
         },
-        closeBackdrop: false
+        // closeBackdrop: false
       });
     });
   </script>
