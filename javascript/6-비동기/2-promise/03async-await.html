@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function question() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const result = prompt('전주 최고의 맛집은?');
+
+          if (result === '허가낸닭발') {
+            // 성공
+            resolve('맞았어요!');
+          } else {
+            // 실패
+            reject('땡!!!');
+          }
+        }, 1000);
+      });
+    }
+
+    function step1(value) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log('step1 입력값: ', value);
+          resolve('step1의 resolve에 넣은 값');
+        }, 1000);
+      });
+    }
+
+    function step2(value) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log('step2 입력값: ', value);
+          resolve('step2의 resolve에 넣은 값');
+        }, 1000);
+      });
+    }
+
+    (async function() {
+      try {
+        const result0 = await question();
+        console.log('question 성공, 정답 맞춤!', result0);
+
+        const result1 = await step1(result0);
+        console.log('step1 성공', result1);
+
+        const result2 = await step2(result1);
+        console.log('step2 성공', result2);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setTimeout(() => {
+          console.log('FINALLYYYYYY');
+        }, 1000);
+      }
+    })();
+    
+    // Promise의 상태
+    // 성공: fulfilled
+    // 실패: rejected
+    // 처리중: pending
+  </script>
+</body>
+</html>

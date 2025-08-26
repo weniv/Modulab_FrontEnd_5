@@ -7,7 +7,15 @@
 </head>
 <body>
   <script>
-    
+    const user = { name: "Kim", age: 30 };
+
+    // 저장
+    localStorage.setItem("user", JSON.stringify(user));
+
+    // 불러오기
+    const saved = localStorage.getItem("user");
+    const parsedUser = JSON.parse(saved);
+    console.log(parsedUser.name); // Kim
   </script>
 </body>
 </html>

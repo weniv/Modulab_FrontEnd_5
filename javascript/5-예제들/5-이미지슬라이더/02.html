@@ -8,12 +8,46 @@
 </head>
 <body>
   <div id="temp" style="width: 50vw; outline: 1px solid black"></div>
+  <div id="temp2" style="width: 300px; outline: 1px solid red"></div>
 
   <script type="module">
     import MiniSlider from './MiniSlider.js';
-    new MiniSlider({
-      containerSelector: '#temp'
+
+    const data = [
+      {
+        id: 'xxx44344basdase',
+        title: '이미지 A0',
+        src: 'images/a0.png'
+      },
+      {
+        id: '2345dsftdsfdsss',
+        title: '이미지 A1',
+        src: 'images/a1.png'
+      },
+      {
+        id: 'dfgg56stetsdsdf',
+        title: '이미지 A2',
+        src: 'images/a2.png'
+      }
+    ];
+
+    const slider = new MiniSlider({
+      containerSelector: '#temp',
+      // className: 'my-slider-1',
+      // data: data
+      data,
+      interval: 3000,
+      // autoPlay: true
     });
+    slider.startAutoPlay();
+
+    const slider2 = new MiniSlider({
+      containerSelector: '#temp2',
+      data,
+      interval: 3000,
+    });
+    slider2.startAutoPlay();
+
   </script>
 </body>
 </html>

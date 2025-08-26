@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="movie-list"></ul>
+
+  <script>
+    // 즉시 호출 함수(익명)
+    (async () => {
+      try {
+        const res = await fetch('data.json');
+        
+        if (!res.ok) {
+          throw new Error('에러 발생!!!');
+        }
+
+        const data = await res.json();
+        // console.log(data);
+
+        // DOM 구성
+        const movieList = document.getElementById('movie-list');
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <p><strong>${item.title}</strong>(${item.year})</p>
+            <p>감독: ${item.director}</p>
+          `;
+          movieList.append(li);
+        });
+
+      } catch (err) {
+        console.error(err);
+      }
+    })();
+  </script>
+</body>
+</html>
