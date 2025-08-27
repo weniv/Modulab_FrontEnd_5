@@ -8,10 +8,13 @@
       display: none;
       width: 150px;
     }
+    /* .visible {
+      display: block;
+    } */
   </style>
 </head>
 <body>
-  <h2>📸 사진 인화 서비스 setTimeout</h2>
+  <h2>📸 사진 인화 서비스</h2>
   <p>사진을 선택하세요:</p>
   <input type="file" id="file-input" accept="image/*" />
   <br><br>
@@ -26,7 +29,51 @@
     // 2. 액자 선택
     // 3. 배송 요청
 
-    
+    const fileInput = document.getElementById('file-input');
+    const preview = document.getElementById('preview');
+    const orderBtn = document.getElementById('order-btn');
+    const log = document.getElementById('log');
+    let selectedFile = null;
+
+    // Event
+    fileInput.addEventListener('change', () => {
+      log.innerHTML = '';
+
+      console.log(fileInput.files);
+      const file = fileInput.files[0];
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.addEventListener('load', e => {
+        console.log(e.target)
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+
+        selectedFile = file;
+      });
+    });
+
+    orderBtn.addEventListener('click', () => {
+      if (!selectedFile) {
+        addLog('인화할 사진을 선택해 주세요.');
+        return;
+      }
+      
+      addLog('주문 프로세스 시작..');
+
+      try {
+        
+      } catch (err) {
+
+      }
+    });
+
+    // 로그 출력
+    function addLog(text) {
+      const li = document.createElement('li');
+      li.textContent = text;
+      log.append(text);
+    }
   </script>
 </body>
 </html>
