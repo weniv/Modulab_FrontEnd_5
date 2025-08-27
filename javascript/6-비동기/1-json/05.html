@@ -18,8 +18,10 @@
           throw new Error('에러 발생!!!');
         }
 
+        // console.log(res);
+
         const data = await res.json();
-        // console.log(data);
+        console.log(data);
 
         // DOM 구성
         const movieList = document.getElementById('movie-list');

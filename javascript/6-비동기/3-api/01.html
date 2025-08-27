@@ -6,10 +6,41 @@
   <title>Document</title>
 </head>
 <body>
+  <button class="btn">개 사진 보기</button>
+  <div id="photo"></div>
+
   <script>
     // https://free-apis.github.io
     // https://dog.ceo/dog-api/
     
+    const URL = 'https://dog.ceo/api/breeds/image/random';
+
+    async function showDogPic() {
+      try {
+        const res = await fetch(URL);
+        console.log(res.ok);
+        if (!res.ok) {
+          throw new Error('오류 발생!');
+        }
+
+        const data = await res.json();
+        console.log(data);
+
+        // const image = document.createElement('img');
+        const image = new Image();
+        image.src = data.message;
+        document.getElementById('photo').replaceChildren(image);
+
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    
+    document.querySelector('.btn').addEventListener('click', showDogPic);
+
+    // (async () => {
+
+    // })();
   </script>
 </body>
 </html>

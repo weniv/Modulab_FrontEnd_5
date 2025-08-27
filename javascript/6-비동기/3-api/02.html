@@ -91,6 +91,7 @@
 
     <section class="card dog-area" aria-live="polite">
       <div id="dog-slot" class="slot" role="img" aria-label="랜덤 강아지 사진 영역">
+        <div class="spinner"></div>
         <div style="text-align:center;">
           <div style="font-size: 42px;">🐶</div>
           <div class="hint">버튼을 눌러 강아지 사진을 불러오세요!</div>
@@ -113,6 +114,15 @@
   </div>
 
   <script>
+    const API_URL = 'https://dog.ceo/api/breeds/image/random';
+    const slot = document.getElementById('dog-slot');
+    const refreshBtn = document.getElementById('btn-refresh');
+    const breedLabel = document.querySelector('#breed span:last-child');
+
+    // Event
+    refreshBtn.addEventListener('click', showDogPic);
+    window.addEventListener('DOMContentLoaded', showDogPic);
+
     // 유틸: URL에서 품종명 추출해 사람이 읽기 좋게
     function formatBreedFromUrl(url) {
       try {
@@ -127,6 +137,31 @@
           .join(" ");
       } catch (e) {
         return "Unknown breed";
+      }
+    }
+
+    async function showDogPic() {
+      // const spinner = document.createElement('div');
+      // spinner.classList.add('spinner');
+      // slot.append(spinner);
+
+      try {
+        const res = await fetch(API_URL);
+        if (!res.ok) throw new Error('오류 발생!', res.status);
+        const data = await res.json();
+        console.log(data);
+
+        const image = new Image();
+        image.src = data.message;
+        // slot.innerHTML = '';
+        // slot.append(image);
+        slot.replaceChildren(image);
+        // slot.innerHTML = `<img src="${data.message}">`;
+
+
+        breedLabel.textContent = formatBreedFromUrl(data.message);
+      } catch (err) {
+        console.error(err);
       }
     }
   </script>
