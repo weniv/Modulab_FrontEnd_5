@@ -23,17 +23,22 @@
   <button id="order-btn">📦 주문하기</button>
   <br>
   <ul id="log"></ul>
+  <section id="photo-list"></section>
 
   <script>
     // 1. 이미지 업로드
     // 2. 액자 선택
     // 3. 배송 요청
 
+    const BASE_URL = 'https://photo-upload-test.onrender.com';
     const fileInput = document.getElementById('file-input');
     const preview = document.getElementById('preview');
     const orderBtn = document.getElementById('order-btn');
     const log = document.getElementById('log');
+    const photoList = document.getElementById('photo-list');
     let selectedFile = null;
+
+    loadPhotoList();
 
     // Event
     fileInput.addEventListener('change', () => {
@@ -53,7 +58,7 @@
       });
     });
 
-    orderBtn.addEventListener('click', () => {
+    orderBtn.addEventListener('click', async () => {
       if (!selectedFile) {
         addLog('인화할 사진을 선택해 주세요.');
         return;
@@ -62,11 +67,68 @@
       addLog('주문 프로세스 시작..');
 
       try {
-        
+        const photoId = await uploadPhoto(selectedFile); // 업로드
+        const orderId = await chooseFrame(photoId); // 액자선택
+        const message = await requestDelivery(orderId); // 배송요청
+        addLog(message);
       } catch (err) {
 
       }
     });
+
+    // 업로드
+    async function uploadPhoto(file) {
+      // 택배상자
+      const formData = new FormData();
+      // 택배상자(formData)에 이름표를 붙이고 내용물을 담음
+      formData.append('photo', file);
+      // 보내기
+      const res = await fetch(
+        `${BASE_URL}/api/upload`, //주소
+        {
+          method: 'POST', // 저장(추가)
+          body: formData
+        }
+      );
+
+      // 보내는 주소가 잘못되었거나, 서버가 거절했거나 등등 문제 발생..
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error);
+      }
+
+      // 성공
+      const data = await res.json();
+      console.log(data);
+      addLog(data.message);
+      loadPhotoList();
+      return data.photoId;
+    }
+
+    // 액자선택
+    async function chooseFrame() {
+
+    }
+
+    // 배송요청
+    async function requestDelivery() {
+
+    }
+
+    // 사진 가져오기
+    async function loadPhotoList() {
+      const res = await fetch(`${BASE_URL}/api/photos`);
+      if (!res.ok) throw new Error('사진을 불러오지 못했어요.');
+      const data = await res.json();
+      console.log(data);
+
+      // photo-list DOM 구성
+      data.photos.forEach(filename => {
+        const figure = document.createElement('figure');
+        figure.innerHTML = `<img src="${BASE_URL}/uploads/${filename}" alt="${filename}">`;
+        photoList.append(figure);
+      });
+    }
 
     // 로그 출력
     function addLog(text) {
