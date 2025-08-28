@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <title>사진 인화 시뮬레이션</title>
   <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
     #preview {
       display: none;
       width: 150px;
     }
-    /* .visible {
-      display: block;
-    } */
+    #photo-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .photo-item {
+      width: 100px;
+    }
   </style>
 </head>
 <body>
@@ -70,10 +78,30 @@
         const photoId = await uploadPhoto(selectedFile); // 업로드
         const orderId = await chooseFrame(photoId); // 액자선택
         const message = await requestDelivery(orderId); // 배송요청
-        addLog(message);
+        // addLog(message);
       } catch (err) {
-
+        console.error(err);
       }
+    });
+
+    photoList.addEventListener('click', async e => {
+      const filename = e.target.dataset.filename;
+      if (!filename) return;
+
+      const res = await fetch(
+        `${BASE_URL}/api/photos/${filename}`,
+        {
+          method: 'DELETE'
+        }
+      );
+
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error);
+      }
+
+      alert('삭제 완료!');
+      loadPhotoList();
     });
 
     // 업로드
@@ -106,13 +134,52 @@
     }
 
     // 액자선택
-    async function chooseFrame() {
+    async function chooseFrame(photoId) {
+      const res = await fetch(
+        `${BASE_URL}/api/choose-frame`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+            // 보낼 데이터가 JSON이라고 서버에 알려주는
+          },
+          body: JSON.stringify({ photoId })
+          // body: JSON.stringify({ photoId: photoId })
+        }
+      );
 
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error);
+      }
+
+      // 액자 선택 성공
+      const data = await res.json();
+      addLog(data.message);
+      console.log(data);
     }
 
     // 배송요청
-    async function requestDelivery() {
+    async function requestDelivery(orderId) {
+      const res = await fetch(
+        `${BASE_URL}/api/delivery`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+            // 보낼 데이터가 JSON이라고 서버에 알려주는
+          },
+          body: JSON.stringify({ orderId })
+        }
+      );
 
+      if (!res.ok) {
+        const error = await res.json();
+        throw new Error(error);
+      }
+
+      const data = await res.json();
+      return data.message;
     }
 
     // 사진 가져오기
@@ -123,9 +190,14 @@
       console.log(data);
 
       // photo-list DOM 구성
+      photoList.innerHTML = '';
       data.photos.forEach(filename => {
         const figure = document.createElement('figure');
-        figure.innerHTML = `<img src="${BASE_URL}/uploads/${filename}" alt="${filename}">`;
+        figure.className = 'photo-item';
+        figure.innerHTML = `
+          <img src="${BASE_URL}/uploads/${filename}" alt="${filename}">
+          <button class="delete-btn" data-filename="${filename}">삭제</button>
+        `;
         photoList.append(figure);
       });
     }
@@ -134,7 +206,7 @@
     function addLog(text) {
       const li = document.createElement('li');
       li.textContent = text;
-      log.append(text);
+      log.append(li);
     }
   </script>
 </body>

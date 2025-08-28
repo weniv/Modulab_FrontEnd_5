@@ -11,3 +11,6 @@ https://photo-upload-test.onrender.com
 
 [GET]
 /api/photos
+
+[DELETE]
+/api/photos/:filename
