@@ -35,7 +35,7 @@
   </ul>
 
   <!-- 슬라이더 마크업 규칙 (중요!) -->
-  <div class="swiper">
+  <div class="swiper main-event">
     <div class="swiper-wrapper">
       <div class="swiper-slide slide-1">Slide 1</div>
       <div class="swiper-slide slide-2">Slide 2</div>
@@ -50,10 +50,10 @@
   <!-- Swiper JS CDN -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.main-event.swiper', {
       // 가장 기초: 방향과 루프 여부
       direction: 'horizontal',  // 기본값
-      loop: false,              // 기본은 false
+      loop: true,              // 기본은 false
 
       // 페이지네이션 (점)
       pagination: {

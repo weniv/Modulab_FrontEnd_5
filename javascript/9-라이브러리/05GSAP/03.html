@@ -68,14 +68,14 @@
 
     // 1) 히어로 타이틀 살짝 패럴랙스 효과
     gsap.to(".title", {
-      y: -80,            // 스크롤할수록 위로 80px 이동
-      opacity: 0.4,      // 살짝 흐리게
+      y: -180,            // 스크롤할수록 위로 180px 이동
+      opacity: 0,      // 살짝 흐리게
       // ScrollTrigger 옵션 객체
       scrollTrigger: {
         trigger: ".hero",        // 이 요소가 기준이 된다(앵커)
         start: "top top",        // 트리거의 top이 뷰포트의 top에 닿을 때 시작
         end:   "bottom top",     // 트리거의 bottom이 뷰포트의 top에 닿을 때 끝
-        scrub: true              // 스크롤 양에 비례해 애니메이션 재생(스크럽)
+        scrub: 1,              // 스크롤 양에 비례해 애니메이션 재생(스크럽)
         // scrub: 1 처럼 숫자를 주면 스무딩(보간) 시간(초)
         // markers: true          // 디버그용 마커(시작/끝 선) 표시
       }
@@ -100,7 +100,7 @@
 
     // 3) 핀(고정) + 스크럽 애니메이션
     gsap.to(".panel", {
-      scale: 1.1,            // 고정되어 있는 동안 살짝 확대
+      scale: 1.5,            // 고정되어 있는 동안 살짝 확대
       duration: 1,           // scrub:true면 duration은 상대적 의미(모션 곡선 정도)
       scrollTrigger: {
         trigger: ".panel",   // 이 섹션이 기준

@@ -11,24 +11,42 @@
     const user = { profile: { name: 'Alice' } };
 
     // 안전 접근: 경로가 없어도 에러 없이 기본값 사용
-    console.log('get name:', _.get(user, 'profile.name'));  // 'Alice'
-    console.log('get phone w/ default:', _.get(user, 'profile.phone', '없음')); // '없음'
+    // console.log('get name:', _.get(user, 'profile.name'));  // 'Alice'
+    // console.log('get phone w/ default:', _.get(user, 'profile.phone', '없음')); // '없음'
 
     // 안전 설정: 중간 경로가 없어도 만들어 줌 (원본 변경)
     _.set(user, 'profile.phone', '010-1234-5678');
-    console.log('after set:', user.profile.phone); // '010-1234-5678'
+    // console.log('after set:', user.profile.phone); // '010-1234-5678'
 
     // 깊은 병합: {}를 타겟으로 쓰면 원본 보존
     const defaults = { theme:{ dark:false }, lang:'ko' };
     const prefs    = { theme:{ dark:true } };
     const merged   = _.merge({}, defaults, prefs);
-    console.log('merge:', merged); // → { theme:{ dark:true }, lang:'ko' }
+    // console.log('merge:', merged); // → { theme:{ dark:true }, lang:'ko' }
 
     // 깊은 복사: 참조 분리
     const original = { a:{ b:1 } };
     const copy = _.cloneDeep(original);
     copy.a.b = 999;
-    console.log('cloneDeep:', { original: original.a.b, copy: copy.a.b }); // → {1, 999}
+    // console.log('cloneDeep:', { original: original.a.b, copy: copy.a.b }); // → {1, 999}
+
+    // const original2 = { a:{ b:1 }, c: 100 };
+    // const copy2 = original2;
+    // copy2.c = 88888;
+    // console.log( original2 === copy2 ); // true
+
+    // 얕은 복사
+    // const original3 = { a:{ b:1 } };
+    // const copy3 = {...original3};
+    // console.log(original3 === copy3);
+    // copy3.a.b = 999;
+    // console.log(original3.a.b, copy3.a.b);
+
+    // 깊은 복사
+    // const original4 = { a:{ b:1 } };
+    // const copy4 = JSON.parse(JSON.stringify(original4));
+    // copy4.a.b = 777;
+    // console.log('cloneDeep:', { original4: original4.a.b, copy4: copy4.a.b }); // → {1, 999}
   </script>
 </body>
 </html>

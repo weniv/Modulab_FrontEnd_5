@@ -6,6 +6,8 @@
   <title>Lodash - Functions</title>
 </head>
 <body>
+  <input type="search" id="search-input">
+
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script>
     // 디바운스: 연속 호출 중 "마지막 1번만" 실행 (예: 검색 입력)
@@ -18,14 +20,27 @@
 
     // 스로틀: 자주 호출돼도 "주기적으로"만 실행 (예: 스크롤)
     const tick = _.throttle(() => {
-      console.log('⏱️ throttle tick:', Date.now());
+      console.log('⏱️ throttle tick:', Date.now()%100000);
     }, 300);
+    const tick2 = () => {
+      console.log('⏱️ tick:', Date.now());
+    };
     let n = 0;
     const id = setInterval(() => {
       tick();
       if (++n === 10) clearInterval(id);
     }, 50);
     // 위 setInterval은 50ms마다 호출하지만, tick은 300ms마다 한 번만 로그
+
+    // 검색창 UI에 디바운스 적용
+    const input = document.getElementById('search-input');
+    input.addEventListener('input', () => {
+      search(input.value);
+    });
+
+    function search2(q) {
+      console.log('🔎 검색 요청:', q);
+    }
   </script>
 </body>
 </html>
