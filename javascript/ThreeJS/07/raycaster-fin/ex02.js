@@ -53,47 +53,35 @@ box.name = 'box';
 ball.name = 'ball';
 scene.add(box, ball);
 
-// 노란선
-const lineMaterial = new THREE.LineBasicMaterial({ color: 'yellow' });
-const points = [];
-points.push(new THREE.Vector3(0, 0, 100));
-points.push(new THREE.Vector3(0, 0, -100));
-const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
-const line = new THREE.Line(lineGeometry, lineMaterial);
-scene.add(line);
-
-window.addEventListener('resize', setSize);
-renderer.setAnimationLoop(animate);
-
 const clock = new THREE.Clock();
 const raycaster = new THREE.Raycaster();
+const mouse = { x: 0, y: 0 };
+
+window.addEventListener('resize', setSize);
+window.addEventListener('click', e => {
+  mouse.x = e.clientX / window.innerWidth * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+  
+  raycaster.setFromCamera(mouse, camera); // 마우스좌표 정보와 카메라를 이용해서 설정
+
+  // ray(광선)에 맞은 메쉬들을 체크
+  const intersects = raycaster.intersectObjects(scene.children);
+  for (const item of intersects) {
+    if (item.object.isMesh) {
+      console.log(item.object.name);
+      item.object.material.color.set('red');
+      break;
+    }
+  }
+});
+
+renderer.setAnimationLoop(animate);
 
 function animate() {
   const time = clock.getElapsedTime();
 
   ball.position.y = Math.sin(time*2);
   box.position.y = Math.cos(time*2);
-
-  const origin = points[0];
-  const direction = points[1];
-  direction.normalize();
-  raycaster.set(origin, direction); // ray 세팅
-
-  scene.children.forEach(item => {
-    console.log(item)
-    if (item.isMesh) {
-      item.material.color.set('hotpink');
-    }
-  });
-
-  // ray(광선)에 맞은 메쉬들을 체크
-  const intersects = raycaster.intersectObjects(scene.children);
-  intersects.forEach(item => {
-    if (item.object.isMesh) {
-      console.log(item.object.name);
-      item.object.material.color.set('blue');
-    }
-  });
   
   renderer.render(scene, camera);
 }
