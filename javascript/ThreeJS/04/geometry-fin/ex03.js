@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import gsap from 'gsap';
 
 // ----- Geometry
 
@@ -50,9 +51,19 @@ scene.add(box);
 // 정점(Vertex) 제어
 const positionArray = geometry.attributes.position.array; // 지오메트리의 모든 점의 좌표 정보
 const basePositionArray = positionArray.slice(); // 배열 복제
-const randomArray = [];
+const targetArray = positionArray.slice();
+// const randomArray = [];
 for(let i = 0; i < positionArray.length; i++) {
-  randomArray[i] = (Math.random() - 0.5) * 0.1;
+  // randomArray[i] = (Math.random() - 0.5) * 0.1;
+  const offset = (Math.random() - 0.5) * 0.2;
+
+  gsap.to(targetArray, {
+    [i]: basePositionArray[i] + offset,
+    duration: 1 + Math.random(),
+    repeat: -1,
+    yoyo: true,
+    ease: 'elastic'
+  });
 }
 
 // camera.lookAt(box.position);
@@ -68,7 +79,7 @@ function animate() {
   const time = clock.getElapsedTime();
 
   for (let i = 0; i < positionArray.length; i++) {
-    positionArray[i] = basePositionArray[i] + Math.sin(time + randomArray[i] * 100) * 0.07;
+    positionArray[i] = targetArray[i];
   }
 
   geometry.attributes.position.needsUpdate = true;
