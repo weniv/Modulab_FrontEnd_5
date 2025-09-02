@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// ----- 특정 방향의 광선(Ray)에 맞은 Mesh 판별하기
+// ----- 클릭한 Mesh 판별하기
 
 // Renderer
 const canvas = document.getElementById('three-canvas');
