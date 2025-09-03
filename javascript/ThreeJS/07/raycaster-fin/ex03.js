@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import setRaycaster from './setRaycaster.js';
 
-// ----- 클릭한 Mesh 판별하기
+// ----- Raycaster 설정 모듈
 
 // Renderer
 const canvas = document.getElementById('three-canvas');
@@ -36,6 +37,18 @@ directionalLight.position.z = 2;
 scene.add(directionalLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+setRaycaster({
+  scene,
+  camera,
+  eventObject: canvas,
+  onClick: function (object) {
+    if (object.name === 'ball') {
+      object.material.color.set('lime');
+    } if (object.name === 'box') {
+      object.material.color.set('dodgerblue');
+    }
+  }
+});
 
 // Mesh
 const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -54,32 +67,8 @@ ball.name = 'ball';
 scene.add(box, ball);
 
 const clock = new THREE.Clock();
-const raycaster = new THREE.Raycaster();
-const mouse = { x: 0, y: 0 };
-let isDragging = false; // 드래그 하면 true
 
-window.addEventListener('mousedown', () => isDragging = false);
-window.addEventListener('mousemove', () => isDragging = true);
 window.addEventListener('resize', setSize);
-window.addEventListener('click', e => {
-  if (isDragging) return;
-  
-  mouse.x = e.clientX / window.innerWidth * 2 - 1;
-  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-  
-  raycaster.setFromCamera(mouse, camera); // 마우스좌표 정보와 카메라를 이용해서 설정
-
-  // ray(광선)에 맞은 메쉬들을 체크
-  const intersects = raycaster.intersectObjects(scene.children);
-  for (const item of intersects) {
-    if (item.object.isMesh) {
-      console.log(item.object.name);
-      item.object.material.color.set('red');
-      break;
-    }
-  }
-});
-
 renderer.setAnimationLoop(animate);
 
 function animate() {
