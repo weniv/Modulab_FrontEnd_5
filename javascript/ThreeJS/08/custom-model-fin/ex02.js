@@ -40,12 +40,22 @@ const controls = new OrbitControls(camera, renderer.domElement);
 const gltfLoader = new GLTFLoader();
 
 // Mesh
+let mixer; // 애니메이션 믹서
 gltfLoader.load(
-  '/models/streetlight.glb',
+  '/models/character.glb',
   glb => {
-    console.log(glb.scene);
-    scene.add(glb.scene); // Group
+    // console.log(glb.scene);
     // scene.add(glb.scene.children[0]); // Mesh
+    scene.add(glb.scene); // Group
+    console.log(glb.animations);
+    const glbMesh = glb.scene;
+
+    mixer = new THREE.AnimationMixer(glbMesh);
+    const actions = [];
+    actions[0] = mixer.clipAction(glb.animations[0]);
+    actions[1] = mixer.clipAction(glb.animations[1]);
+    // actions[1].repetitions = 2;
+    actions[0].play();
   }
 );
 
@@ -57,6 +67,8 @@ const clock = new THREE.Clock();
 function animate() {
   const delta = clock.getDelta();
   
+  if (mixer) mixer.update(delta);
+
   renderer.render(scene, camera);
 }
 
