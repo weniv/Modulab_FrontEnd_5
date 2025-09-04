@@ -186,7 +186,7 @@ setRaycaster({
 const clock = new THREE.Clock();
 function animate() {
   const delta = clock.getDelta();
-  character.update(delta);
+  character.update(delta); // mixer 업데이트
 
   // 부드러운 카메라 회전
   currentRotationX += (targetRotationX - currentRotationX) * rotationSpeed;
