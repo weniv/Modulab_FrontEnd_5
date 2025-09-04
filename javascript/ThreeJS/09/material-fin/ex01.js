@@ -46,14 +46,14 @@ const material1 = new THREE.MeshLambertMaterial({
 // 중간 성능, 반사(어설픔)
 const material2 = new THREE.MeshPhongMaterial({
   color: 'deepskyblue',
-  shininess: 100, // 반짝임 정도
-  specular: new THREE.Color(0x666666) // 흰색일 수록 빛나는 강도가 세짐
+  shininess: 300, // 반짝임 정도
+  specular: new THREE.Color('#666') // 흰색일 수록 빛나는 강도가 세짐
 });
 // 조금 무거움, 리얼한 반사(현실적)
 const material3 = new THREE.MeshStandardMaterial({
   color: 'deepskyblue',
-  roughness: 0.3, // 0 ~ 1
-  metalness: 0.2
+  roughness: 0.1, // 0 ~ 1
+  metalness: 0.3
 });
 
 const mesh1 = new THREE.Mesh(geometry, material1);

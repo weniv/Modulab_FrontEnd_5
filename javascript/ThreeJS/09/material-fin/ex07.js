@@ -57,6 +57,7 @@ const materials = [
   new THREE.MeshBasicMaterial({ map: backTexture })
 ];
 
+// 선명하게 처리
 rightTexture.magFilter = THREE.NearestFilter;
 leftTexture.magFilter = THREE.NearestFilter;
 topTexture.magFilter = THREE.NearestFilter;

@@ -73,7 +73,7 @@ box.castShadow = true;
 scene.add(box);
 
 // Cannon (물리 설정)
-const world = new CANNON.World();
+const world = new CANNON.World(); // Scene
 world.gravity.set(0, -9.82, 0); // 지구의 중력가속도
 // 성능 개선
 // world.allowSleep = true;
@@ -98,7 +98,7 @@ floorBody.position.y = -1;
 world.addBody(floorBody);
 
 // 캐논 박스
-const boxShape = new CANNON.Box(new CANNON.Vec3(0.5, 1, 0.5));
+const boxShape = new CANNON.Box(new CANNON.Vec3(0.5, 1, 0.5)); // 1, 2, 1
 const boxBody = new CANNON.Body({
   mass: 1,
   shape: boxShape

@@ -74,7 +74,8 @@ const material = new THREE.MeshStandardMaterial({
   aoMapIntensity: 1.5,
   displacementMap: textureDisplacement,
   displacementScale: 0.1,
-  displacementBias: -0.05 // 버텍스 위치에 추가로 더해지는 기본 오프셋값
+  // 버텍스 위치에 추가로 더해지는 기본 오프셋값
+  displacementBias: -0.05
 });
 const box = new THREE.Mesh(geometry, material);
 box.castShadow = true;

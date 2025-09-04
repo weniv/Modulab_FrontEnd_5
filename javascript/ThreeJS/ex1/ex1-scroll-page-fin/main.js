@@ -57,7 +57,7 @@ scene.add(floorMesh);
 const houses = [];
 houses.push(new House({ gltfLoader, scene, modelSrc: '/models/house.glb', x: -5, z: 20, height: 2 }));
 houses.push(new House({ gltfLoader, scene, modelSrc: '/models/character.glb', x: 7, z: 10, height: 1 }));
-houses.push(new House({ gltfLoader, scene, modelSrc: '/models/house.glb', x: -10, z: 0, height: 2 }));
+houses.push(new House({ gltfLoader, scene, modelSrc: '/models/bulbasaur_-_pokemon.glb', x: -10, z: 0, height: 0.4, scale: 0.5 }));
 houses.push(new House({ gltfLoader, scene, modelSrc: '/models/house.glb', x: 10, z: -10, height: 2 }));
 houses.push(new House({ gltfLoader, scene, modelSrc: '/models/house.glb', x: -5, z: -20, height: 2 }));
 

@@ -92,15 +92,20 @@ function changeColor(color) {
   modelObject.traverse(child => {
     if (child.isMesh) {
       console.log('Mesh name:', child.name);
-      if (color === 'reset') {
-        child.material = child.userData.originalMaterial || originalMaterial;
-      } else {
-        if (!child.userData.originalMaterial) {
-          child.userData.originalMaterial = child.material.clone();
+      const isBody = child.name.includes('basecolor');
+      const isAppleLogo = child.name.includes('apple_logo');
+
+      if (isAppleLogo) {
+        if (color === 'reset') {
+          child.material = child.userData.originalMaterial || originalMaterial;
+        } else {
+          if (!child.userData.originalMaterial) {
+            child.userData.originalMaterial = child.material.clone();
+          }
+          const newMaterial = child.userData.originalMaterial.clone();
+          newMaterial.color.set(color);
+          child.material = newMaterial;
         }
-        const newMaterial = child.userData.originalMaterial.clone();
-        newMaterial.color.set(color);
-        child.material = newMaterial;
       }
     }
   });

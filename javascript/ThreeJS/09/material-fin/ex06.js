@@ -47,11 +47,11 @@ const texture = textureLoader.load('/textures/bread/3DBread002_LQ-1K-JPG_Color.j
 texture.wrapS = THREE.RepeatWrapping; // 가로 방향 반복
 texture.wrapT = THREE.RepeatWrapping; // 세로 방향 반복
 
-texture.offset.x = 0.3; // 0 ~ 1
-texture.offset.y = 0.3;
+// texture.offset.x = 0.3; // 0 ~ 1
+// texture.offset.y = 0.3;
 
-texture.repeat.x = 2;
-texture.repeat.y = 3;
+// texture.repeat.x = 2;
+// texture.repeat.y = 3;
 
 texture.rotation = THREE.MathUtils.degToRad(30);
 texture.center.x = 0.5; // 중앙을 기준으로 회전

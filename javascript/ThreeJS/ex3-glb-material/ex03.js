@@ -92,22 +92,26 @@ function changeColor(color) {
   modelObject.traverse(child => {
     if (child.isMesh) {
       console.log('Mesh name:', child.name);
-      if (color === 'reset') {
-        child.material = child.userData.originalMaterial || originalMaterial;
-      } else {
-        if (!child.userData.originalMaterial) {
-          child.userData.originalMaterial = child.material.clone();
+      const selected = +child.name.split('_')[1] < 8 ? true : false;
+
+      if (selected) {
+        if (color === 'reset') {
+          child.material = child.userData.originalMaterial || originalMaterial;
+        } else {
+          if (!child.userData.originalMaterial) {
+            child.userData.originalMaterial = child.material.clone();
+          }
+          const newMaterial = child.userData.originalMaterial.clone();
+          newMaterial.color.set(color);
+          child.material = newMaterial;
         }
-        const newMaterial = child.userData.originalMaterial.clone();
-        newMaterial.color.set(color);
-        child.material = newMaterial;
       }
     }
   });
 }
 
 gltfLoader.load(
-  '/models/iphone_16_pro_max.glb',
+  '/models/2022_porche_911_gt3_rsr.glb',
   glb => {
     glb.scene.traverse(child => {
       if (child.isMesh) {
@@ -139,9 +143,9 @@ gltfLoader.load(
     scene.add(container);
     
     modelObject = container;
-    // modelObject.scale.set(10, 10, 10);
-    modelObject.position.y = 1;
-    modelObject.rotation.z = 0.3;
+    modelObject.scale.set(0.2,0.2,0.2);
+    modelObject.position.y = 0.8;
+    // modelObject.rotation.z = 0.3;
   }
 );
 
@@ -153,7 +157,7 @@ const clock = new THREE.Clock();
 function animate() {
   const delta = clock.getDelta();
 
-  if (modelObject) modelObject.rotation.y += delta * 2;
+  // if (modelObject) modelObject.rotation.y += delta * 2;
 
   renderer.render(scene, camera);
 }

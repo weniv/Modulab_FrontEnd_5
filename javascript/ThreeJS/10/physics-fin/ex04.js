@@ -91,13 +91,13 @@ world.defaultContactMaterial.restitution = 0.3; // 월드의 기본 반발력
 
 // ContactMaterial 설정
 const boxContactMaterial = new CANNON.Material('box'); // box는 그냥 레이블(구분용)
-const floorContactMaterial = new CANNON.Material('floor');
+const floorContactMaterial = new CANNON.Material('floor'); // floor
 const boxFloorContact = new CANNON.ContactMaterial(
   boxContactMaterial, // 부딪힐 두개의 Material을 설정
   floorContactMaterial,
   {
     friction: 0.2, // 마찰력
-    restitution: 0.7 // 반발력
+    restitution: 1 // 반발력
   }
 );
 world.addContactMaterial(boxFloorContact);

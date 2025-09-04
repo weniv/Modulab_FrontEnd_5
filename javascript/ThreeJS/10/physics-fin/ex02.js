@@ -112,6 +112,9 @@ function animate() {
     mesh.quaternion.copy(body.quaternion);
   }
 
+  // floor.position.copy(floorBody.position);
+  // floor.quaternion.copy(floorBody.quaternion);
+
   renderer.render(scene, camera);
 }
 
