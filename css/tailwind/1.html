@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>기본 사용법과 문법</title>
+  </head>
+  <body>
+    <h1 class="font-bold underline bg-pink-100">Hello world!</h1>
+    <!-- w,h -->
+    <div class="w-50 h-50 bg-blue-200">50 * 4px</div>
+    <div class="w-[234px] h-[234px] bg-blue-100">234 * 234</div>
+    <!-- [px, rem, % 구체적인 값 직접 넣을 수 있다.] -->
+    <!-- border -->
+    <div
+      class="max-w-5xl bg-pink-300 w-30 h-30 border border-gray-500 border-10 rounded-md"
+    ></div>
+    <!-- padding, margin -->
+    <div class="bg-yellow-300 w-30 h-30 p-10 m-auto">hello</div>
+    <!-- font-family 및 font-size-->
+    <h1 class="font-sans text-sm text-red-500">hello</h1>
+    <h1 class="font-serif text-2xl text-center">hello</h1>
+    <h1 class="font-mono text-base text-shadow-lg">hello</h1>
+    <!-- shadow -->
+    <div class="w-30 h-30 shadow-lg"></div>
+    <!-- space -->
+    <div class="border m-3 space-y-5">
+      <div class="p-2 border border-blue-500">박스1</div>
+      <div class="p-2 border border-blue-500">박스1</div>
+      <div class="p-2 border border-blue-500">박스1</div>
+      <div class="p-2 border border-blue-500">박스1</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS 실습 예시 (기초 클래스만 사용)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 p-8">
+    <!-- 예시 1: 간단한 프로필 카드 -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+        예시 1: 프로필 카드
+      </h2>
+      <div class="bg-white rounded-lg shadow-lg p-6 w-64 mx-auto border">
+        <div class="w-16 h-16 bg-blue-500 rounded-full mx-auto mb-4"></div>
+        <h3 class="text-xl font-bold text-gray-800 text-center mb-2">
+          김개발자
+        </h3>
+        <p class="text-gray-600 text-center text-sm mb-4">Frontend Developer</p>
+        <p class="text-center text-sm text-gray-500">팔로워 1,234명</p>
+      </div>
+    </div>
+
+    <!-- 예시 2: 알림 메시지 -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+        예시 2: 성공 알림
+      </h2>
+      <div
+        class="bg-green-100 border border-green-300 rounded-lg p-4 w-80 mx-auto"
+      >
+        <h4 class="font-bold text-green-800 mb-2">✅ 저장 완료!</h4>
+        <p class="text-green-700 text-sm">파일이 성공적으로 저장되었습니다.</p>
+      </div>
+    </div>
+
+    <!-- 예시 3: 제품 카드 -->
+    <div class="mb-10">
+      <h2 class="text-2xl font-semibold mb-5 text-gray-700">
+        예시 3: 제품 카드
+      </h2>
+      <div
+        class="bg-white rounded-xl shadow-md w-72 my-10 mx-auto border border-gray-200"
+      >
+        <div class="h-40 bg-lime-500 rounded-t-xl"></div>
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-gray-900 mb-2">애플 워치</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            건강과 피트니스를 위한 스마트 워치
+          </p>
+          <p class="text-2xl font-bold text-gray-900">₩599,000</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 예시 4: 버튼 모음 -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+        예시 4: 다양한 버튼들
+      </h2>
+      <div class="text-center">
+        <div class="mb-4">
+          <button
+            class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg mr-4"
+          >
+            기본 버튼
+          </button>
+          <button
+            class="bg-white text-gray-700 px-6 py-3 rounded-lg font-medium shadow-md border border-gray-300"
+          >
+            보조 버튼
+          </button>
+        </div>
+        <div class="mb-4">
+          <button
+            class="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md mr-4"
+          >
+            삭제
+          </button>
+          <button
+            class="bg-green-500 text-white px-8 py-4 rounded-xl font-bold shadow-xl"
+          >
+            시작하기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 예시 5: 통계 박스 -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">
+        예시 5: 통계 박스
+      </h2>
+      <div
+        class="bg-white rounded-lg shadow-lg p-6 w-64 mx-auto border-l-4 border-blue-500"
+      >
+        <h4 class="text-sm font-medium text-gray-500 mb-2">총 방문자 수</h4>
+        <p class="text-3xl font-bold text-gray-900 mb-2">12,345</p>
+        <p class="text-sm text-green-600 font-medium">지난 달 대비 +15%</p>
+      </div>
+    </div>
+
+    <!-- 예시 6: 간단한 글 카드 -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold mb-6 text-gray-700">예시 6: 글 카드</h2>
+      <div class="bg-white rounded-lg shadow-md p-6 w-80 mx-auto border">
+        <div class="w-12 h-12 bg-gray-300 rounded-full mb-4"></div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">
+          Tailwind CSS 시작하기
+        </h3>
+        <p class="text-gray-600 text-sm mb-4">
+          유틸리티 퍼스트 CSS 프레임워크로 빠르게 스타일링하는 방법을
+          알아보세요.
+        </p>
+        <div class="border-t pt-4">
+          <p class="text-xs text-gray-500">2024년 3월 15일 작성</p>
+          <p class="text-xs text-gray-500 mt-1">조회수 1,234</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition 과 animation</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- transition -->
+    <button
+      class="p-10 bg-green-300 hover:bg-green-700 hover:text-white frounded-lg m-10 transition-colors duration-200"
+    >
+      저장하기
+    </button>
+    <!-- animation -->
+    <!-- 로딩 컴포넌트 -->
+    <div
+      class="w-8 h-8 borer-2 border border-6 border-blue-400 rounded-full border-t-transparent m-3 animate-spin"
+    ></div>
+    <!-- 새 알림효과 -->
+    <div
+      class="w-20 border rounded-sm border-gray-400 text-center m-10 relative"
+    >
+      <span class="text-lg">메일함</span>
+      <!-- 알림 점 -->
+      <span
+        class="h-3 w-3 bg-red-500 rounded-full absolute -right-1 -top-1 animate-ping"
+      ></span>
+    </div>
+    <!-- 스켈레톤 ui -->
+    <div class="w-20 h-10 bg-gray-200 rounded-lg animate-pulse"></div>
+    <!-- 바운스, 스크롤 유도 -->
+    <div class="m-10 text-3xl animate-bounce">⬆️</div>
+  </body>
+</html>

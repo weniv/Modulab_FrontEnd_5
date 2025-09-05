@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>grid</title>
+  </head>
+  <body>
+    <div class="grid grid-cols-3">
+      <!-- 그리드 컨테이너 -->
+      <div class="w-20 h-20 bg-red-300"></div>
+      <div class="w-20 h-20 bg-red-300"></div>
+      <div class="w-20 h-20 bg-red-300"></div>
+    </div>
+
+    <div class="grid grid-cols-4">
+      <div class="w-20 h-20 bg-blue-300 col-span-2"></div>
+      <div class="w-20 h-20 bg-blue-300"></div>
+      <div class="w-20 h-20 bg-blue-300"></div>
+    </div>
+
+    <!-- 반응형 그리드 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+      <!-- 그리드 컨테이너 -->
+      <div class="w-20 h-20 bg-green-300"></div>
+      <div class="w-20 h-20 bg-green-300"></div>
+      <div class="w-20 h-20 bg-green-300"></div>
+    </div>
+  </body>
+</html>

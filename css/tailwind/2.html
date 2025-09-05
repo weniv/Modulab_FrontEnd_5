@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>flex</title>
+  </head>
+  <body>
+    <!-- display: flex -->
+    <div class="border-4 m-3 flex flex-col">
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+    </div>
+    <!-- flex:wrap => 자식 요소들이 공간이 부족할 경우 다음 줄로 넘어감-->
+    <div class="border-4 m-3 flex-wrap">
+      <div class="p-2 border border-blue-700">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum maiores
+        enim dolore. Nam iure provident temporibus fuga ullam error nulla sint
+        rerum accusamus, ratione, esse quod natus tempore, saepe molestiae!
+      </div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+    </div>
+    <!-- justify-content align-items -->
+    <div class="border-4 m-3 flex justify-center items-center h-20">
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+    </div>
+    <!-- align-self: 특정 요소 하나만 다르게 정렬 -->
+    <div class="border-4 m-3 flex justify-center items-center h-20">
+      <div class="p-2 border border-blue-700 self-start">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+      <div class="p-2 border border-blue-700">박스1</div>
+    </div>
+    <!-- flex: 1  flex: 1 1 0% -->
+    <!-- flex-grow: 1; 여분의 공간이 있을때 1의 비율로 늘어난다. 
+    flex-shrink: 1; 공간이 부족할때 1의 비율로 줄어든다.
+    flex-basis: 0%; 초기 크기를 0% 설정한다.  -->
+    <!-- flex-1 : 남은 공간 다 차지, 여러개에 주면 균등하게 가져가게 된다. -->
+    <div class="border-4 m-3 flex flex-wrap">
+      <div class="p-2 border border-red-700 flex-1">박스1</div>
+      <div class="p-2 border border-red-700 flex-1">박스1</div>
+      <div class="p-2 border border-red-700 flex-1">박스1</div>
+      <div class="p-2 border border-red-700 flex-1">박스1</div>
+    </div>
+  </body>
+</html>
