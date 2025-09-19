@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h1>fragment TEST</h1>
+
+        <!-- <figure>
+            <img width="200px"
+                src="https://images.prestigeonline.com/wp-content/uploads/sites/5/2022/09/15111255/Chopard-aespa-hero.jpg"
+                alt="">
+            <figcaption>에스파입니다.</figcaption>
+        </figure> -->
+    </main>
+
+    <script>
+
+        const main = document.querySelector('main');
+        const frag = document.createDocumentFragment();
+
+        for (let i = 0; i < 10; i++) {
+            const fig = document.createElement('figure');
+            fig.innerHTML = `<img width="200px"
+                src="https://images.prestigeonline.com/wp-content/uploads/sites/5/2022/09/15111255/Chopard-aespa-hero.jpg"
+                alt="">
+            <figcaption>에스파입니다.</figcaption>`;
+
+            frag.append(fig);
+        }
+
+        main.append(frag);
+    </script>
+</body>
+
+</html>

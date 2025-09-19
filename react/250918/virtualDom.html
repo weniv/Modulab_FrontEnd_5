@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main id="main"></main>
+    <!-- <h1 class="greeting">
+        hello <i>재현</i>. Welcome!
+    </h1> -->
+
+
+    <script>
+        const h1 = document.createElement('h1');
+        h1.classList.add('greeting');
+        h1.appendChild(document.createTextNode('hello'));
+
+        const i = document.createElement('i');
+        i.appendChild(document.createTextNode('재현'));
+        h1.appendChild(i);
+        h1.appendChild(document.createTextNode('. Welcome!'));
+
+        document.body.appendChild(h1);
+
+
+        function vdom() {
+            return React.createElement(
+                'h1',
+                { className: 'greeting' },
+                'hello',
+                React.createElement('i', null, '재현'),
+                '. Welcome!');
+        }
+
+
+        function createJSX() {
+            return (
+                <h1 class="greeting">
+                    hello <i>재현</i>. Welcome!
+                </h1>
+            );
+        }
+
+    </script>
+</body>
+
+</html>
