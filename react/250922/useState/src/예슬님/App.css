@@ -1,0 +1,12 @@
+.my-state-box {
+    padding: 20px;
+    width: fit-content;
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+button.on {
+    background-color: green;
+    color: #fff;
+}

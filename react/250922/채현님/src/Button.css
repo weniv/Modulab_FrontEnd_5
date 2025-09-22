@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 30px;
+}
+
+button:hover {
+  background-color: skyblue;
+}
+
+p {
+  font-size: 30px;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 50px;
+  text-align: center;
+  font-weight: bold;
+}
