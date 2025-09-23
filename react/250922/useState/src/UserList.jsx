@@ -3,8 +3,8 @@ import { useState } from "react";
 export function UserList({ users }) {
     return (
         <ul>
-            {users.map((user) => {
-                return <UserItem key={user.id} user={user} />
+            {users.map((user, index) => {
+                return <UserItem key={index} user={user} />
             })}
         </ul>
     );
