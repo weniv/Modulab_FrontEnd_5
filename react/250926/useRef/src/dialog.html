@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn-open">모달 열기</button>
+    <dialog>
+        <!-- <form method="dialog"> -->
+        <h2>모달입니다!!</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur reiciendis ratione unde quos eveniet
+            distinctio, impedit dolorum tempora libero officiis ea similique esse totam error, perspiciatis ullam
+            architecto ipsa adipisci?</p>
+        <button class="btn-close">닫기</button>
+        <!-- </form> -->
+    </dialog>
+
+    <script>
+        const btnOpen = document.querySelector('.btn-open');
+        const btnClose = document.querySelector('.btn-close');
+        const dialog = document.querySelector('dialog');
+
+        btnOpen.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        btnClose.addEventListener('click', () => {
+            dialog.close();
+        });
+
+    </script>
+</body>
+
+</html>

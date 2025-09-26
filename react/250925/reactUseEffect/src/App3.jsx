@@ -1,4 +1,6 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const ItemList = styled.div`
@@ -35,6 +37,47 @@ const ItemList = styled.div`
 
 function NationList() {
 
+    const [nations, setNations] = useState([]);
+    const [url, setUrl] = useState('http://localhost:3000/nations');
+
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/nations')
+    //         .then((response) => {
+
+    //             if (!response.ok) {
+    //                 throw new Error('네트워크 문제가 있습니다.');
+    //             }
+
+    //             return response.json();
+    //         }).then((json) => {
+    //             setNations(json);
+    //         }).catch((error) => {
+    //             console.error(error.message);
+    //         });
+    // }, []);
+
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error('네트워크 문제가 있습니다.');
+                }
+
+                const json = await response.json();
+
+                setNations(json);
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        fetchData();
+    }, [url]);
+
 
     return (
         <ItemList>
@@ -50,8 +93,8 @@ function NationList() {
                 })}
             </ul>
             <div>
-                <button>유럽목록</button>
-                <button>전체목록</button>
+                <button onClick={() => setUrl('http://localhost:3000/nations?loc=europe')}>유럽목록</button>
+                <button onClick={() => setUrl('http://localhost:3000/nations')}>전체목록</button>
             </div>
         </ItemList>
     );
