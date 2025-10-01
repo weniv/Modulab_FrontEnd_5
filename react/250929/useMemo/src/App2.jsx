@@ -40,8 +40,6 @@ function App() {
         console.log(`[useCallback 사용] 현재 텍스트: "${text}"`);
     }, [text]); // text가 변경될 때만 함수 재생성
 
-    console.log(' App 컴포넌트 리렌더링됨');
-
     return (
         <div style={{ padding: '20px' }}>
 
