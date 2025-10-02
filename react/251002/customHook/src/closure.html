@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 참조카운팅
+        let me = { age: 30 };
+        let you = me;  // 참조카운트 : 2
+
+        me = null; // 참조카운트 : 1
+        you = null; // 참조카운트: 0 
+
+
+        function outter() {
+            let val = 1
+
+            return function inner() {
+                return 1 + val;
+            }
+        }
+
+        const outterVal = outter();
+
+        outterVal();
+
+        const person = {
+            age: 10
+        }
+
+        function Person() {
+
+            let age = 35;
+
+            return {
+                getAge: function () { return age },
+                setAge: function (data) { age = data }
+            }
+        }
+
+        const person2 = new Person();
+
+        person2.getAge();
+        person2.setAge(10);
+
+
+
+    </script>
+</body>
+
+</html>
