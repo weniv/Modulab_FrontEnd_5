@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .spacer {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: #f8f9fa;
+        }
+
+        .target-box {
+            height: 200px;
+            padding: 30px;
+            margin: 20px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 8px;
+
+            /* 초기 상태 설정 */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        /* 요소가 보일 때 적용될 클래스 */
+        .target-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .description {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="description">
+        👇 아래로 스크롤 해보세요!
+    </div>
+
+    <!-- 빈 공간 -->
+    <div class="spacer">
+        여백입니다.
+    </div>
+
+    <!-- 관찰 대상 요소들 -->
+    <div class="target-box">안녕하세요! 1번 박스입니다.</div>
+    <div class="target-box">반갑습니다! 2번 박스입니다.</div>
+    <div class="target-box">어서오세요! 3번 박스입니다.</div>
+
+
+    <script>
+
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            {
+                threshold: 0.5
+            }
+        );
+
+        document.querySelectorAll('.target-box').forEach((box) => {
+            observer.observe(box);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ImageList from './ImageList';
-import { useScroll } from './Hook/useScroll';
+import { useScroll } from './Hook/useScroll2';
 import Loading from './Loading';
 
 export default function InfiniteImg() {
