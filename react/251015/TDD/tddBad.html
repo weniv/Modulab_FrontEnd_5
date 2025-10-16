@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .viewer {
+            display: block;
+            font-size: 24px;
+            color: green;
+            margin: 50px 0 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <strong class="viewer"></strong>
+        <input type="text" class="inp-txt">
+        <button class="btn-push" onclick="push()">적용</button>
+    </article>
+
+    <script>
+
+        let txt = "Hello Lions";
+        const viewer = document.querySelector('.viewer');
+        viewer.textContent = txt;
+
+        function push() {
+            const inpTxt = document.querySelector('.inp-txt');
+            viewer.textContent = inpTxt.value;
+        }
+
+        // 테스트가 가능하려면...
+        // ui를 코드와 완전히 분리해야 한다.
+        // 자바스크립트는 별도의 파일로 분리한다.
+        // 모든 기능은 함수단위로 작성한다.
+
+
+    </script>
+</body>
+
+</html>

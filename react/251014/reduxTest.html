@@ -52,13 +52,18 @@
 
 <body>
     <input type="text" id="inputText">
-    <input type="button" value="클릭!" />
-    <input type="button" value="Rounded!" />
-    <input type="button" value="Circle!" />
-    <input type="button" value="Rect!" />
-    <input type="button" value="Red!" />
-    <input type="button" value="Green!" />
-    <input type="button" value="Blue!" />
+    <input type="button" value="클릭!" onclick="
+        const value = document.querySelector('#inputText').value;
+        console.log(store.dispatch);
+        store.dispatch({type: 'TEXT', text: value});
+    " />
+
+    <input type="button" value="Rounded!" onclick="store.dispatch({type: 'BORDER', borderRadius: '10px'});" />
+    <input type="button" value="Circle!" onclick="store.dispatch({type: 'BORDER', borderRadius: '40px'});" />
+    <input type="button" value="Rect!" onclick="store.dispatch({type: 'BORDER', borderRadius: '0px'});" />
+    <input type="button" value="Red!" onclick="store.dispatch({type: 'BORDER_COLOR', border: '5px solid red'});" />
+    <input type="button" value="Green!" onclick="store.dispatch({type: 'BORDER_COLOR', border: '5px solid green'});" />
+    <input type="button" value="Blue!" onclick="store.dispatch({type: 'BORDER_COLOR', border: '5px solid blue'});" />
     <br>
     <br>
     <div class="container">
@@ -73,13 +78,56 @@
     <script>
         const reducer = (state = {
             text: 'hello world',
-            border: '1px solid black',
+            border: '5px solid black',
             borderRadius: '0px'
         }, action) => {
             switch (action.type) {
+                case 'TEXT':
+                    return {
+                        ...state,
+                        text: action.text
+                    }
+
+                case 'BORDER':
+                    return {
+                        ...state,
+                        borderRadius: action.borderRadius
+                    }
+
+                case 'BORDER_COLOR':
+                    return {
+                        ...state,
+                        border: action.border
+                    }
+
+                case 'BORDER_COLOR':
+                    return {
+                        ...state,
+                        border: action.border
+                    }
+                case 'BORDER_COLOR':
+                    return {
+                        ...state,
+                        border: action.border
+                    }
+                case 'BORDER_COLOR':
+                    return {
+                        ...state,
+                        border: action.border
+                    }
+                case 'BORDER_COLOR':
+                    return {
+                        ...state,
+                        border: action.border
+                    }
+                case 'BORDER_COLOR':
+                    return {
+                        ...state,
+                        border: action.border
+                    }
                 default:
                     return {
-                        state
+                        ...state
                     }
             }
         }
@@ -87,12 +135,12 @@
         const store = Redux.createStore(reducer);
 
         function item1() {
-            const { state } = store.getState();
-
+            const state = store.getState();
+            console.log(state);
             const item = document.querySelector('#item1');
 
             item.textContent = state.text;
-            item.style.borderRaius = state.borderRadius;
+            item.style.borderRadius = state.borderRadius;
             item.style.border = state.border;
         }
         store.subscribe(item1);
