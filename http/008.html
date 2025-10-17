@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="requestGet">블로그 데이터 불러오기</button>
+    <div id="responseBlogContainer"></div>
+    <div id="responseBlogDetailContainer"></div>
+    <script>
+        const baseURL = "https://dev.wenivops.co.kr/services/fastapi-crud/352/blog";
+        
+        // GET - 블로그 목록 불러오기
+        document.getElementById('requestGet').addEventListener('click', function() {
+            fetch(baseURL)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('responseBlogContainer');
+                    container.innerHTML = '';
+                    
+                    data.forEach(blog => {
+                        const blogDiv = document.createElement('div');
+                        blogDiv.style.border = '1px solid red';
+                        blogDiv.style.margin = '10px 0';
+                        blogDiv.style.padding = '10px';
+                        
+                        blogDiv.innerHTML = `
+                            <div>ID: ${blog.index}</div>
+                            <div>제목: ${blog.title}</div>
+                            <div>내용: ${blog.content}</div>
+                            <button onclick="getBlogDetail(${blog.index})">get</button>
+                            <button onclick="showEditForm(${blog.index}, '${blog.title}', '${blog.content}')">put</button>
+                            <button onclick="deleteBlog(${blog.index})">delete</button>
+                        `;
+                        
+                        container.appendChild(blogDiv);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+        
+        // GET - 개별 블로그 상세 보기
+        function getBlogDetail(id) {
+            fetch(`${baseURL}/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    const detailContainer = document.getElementById('responseBlogDetailContainer');
+                    detailContainer.style.border = '1px solid red';
+                    detailContainer.style.margin = '10px 0';
+                    detailContainer.style.padding = '10px';
+                    
+                    detailContainer.innerHTML = `
+                        <h3>상세 보기</h3>
+                        <div>ID: ${data.index}</div>
+                        <div>제목: ${data.title}</div>
+                        <div>내용: ${data.content}</div>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        
+        // PUT - 수정 폼 보여주기 및 수정 처리
+        function showEditForm(id, title, content) {
+            const detailContainer = document.getElementById('responseBlogDetailContainer');
+            detailContainer.style.border = '1px solid red';
+            detailContainer.style.margin = '10px 0';
+            detailContainer.style.padding = '10px';
+            
+            detailContainer.innerHTML = `
+                <h3>수정하기</h3>
+                <div>ID: ${id}</div>
+                <div>
+                    <input type="text" id="editTitle" value="${title}" placeholder="제목">
+                </div>
+                <div>
+                    <textarea id="editContent" placeholder="내용">${content}</textarea>
+                </div>
+                <button onclick="updateBlog(${id})">저장</button>
+                <button onclick="document.getElementById('responseBlogDetailContainer').innerHTML=''">취소</button>
+            `;
+        }
+        
+        // PUT - 실제 수정 요청
+        function updateBlog(id) {
+            const index = id.toString();
+            const newTitle = document.getElementById('editTitle').value;
+            const newContent = document.getElementById('editContent').value;
+            
+            fetch(`${baseURL}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    index: index,
+                    title: newTitle,
+                    content: newContent
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert('수정되었습니다.');
+                document.getElementById('responseBlogDetailContainer').innerHTML = '';
+                document.getElementById('requestGet').click(); // 목록 새로고침
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        // DELETE - 삭제
+        function deleteBlog(id) {
+            if(confirm('정말 삭제하시겠습니까?')) {
+                fetch(`${baseURL}/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('삭제되었습니다.');
+                    document.getElementById('requestGet').click(); // 목록 새로고침
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+</body>
+</html>
