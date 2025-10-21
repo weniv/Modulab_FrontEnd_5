@@ -1,5 +1,5 @@
 const numArr: number[] = [1, 2, 3];
-const strArr: Array<string> = ['1', '2', '3'];
+const strArr: string[] = ['1', '2', '3'];
 
 const arr1: (number | string)[] = ['1', 3]
 const arr2: Array<number|string|boolean> = [1, '2', 3];
