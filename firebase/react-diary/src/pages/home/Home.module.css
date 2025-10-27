@@ -137,6 +137,7 @@ h3 {
 
 .container section {
     padding-top: 94px;
+    flex-grow: 1;
 }
 
 .container section ul li {

@@ -22,7 +22,7 @@ export default function Login() {
 
     return (
         <>
-            <main>
+            <main className={styles['login-main']}>
                 <h2 className={styles["img-title"]}>
 
                     <svg class="svg" width="156" height="75" viewBox="0 0 156 75" fill="none" xmlns="http://www.w3.org/2000/svg">

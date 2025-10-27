@@ -19,7 +19,7 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <main className={styles["diary-main"]}>
-                <h2 className="heart">{formattedDate}의 비밀일기</h2>
+                <h2 className={styles.heart}>{formattedDate}의 비밀일기</h2>
                 <DiaryForm uid={user.uid}></DiaryForm>
             </main>
             <section>

@@ -24,7 +24,7 @@ footer p {
 }
 
 /* main */
-main {
+.login-main {
     width: 392px;
     margin: 71px auto 52px;
 }
