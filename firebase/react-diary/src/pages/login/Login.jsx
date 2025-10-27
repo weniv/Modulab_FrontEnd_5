@@ -1,9 +1,11 @@
+import { useLogin } from '../../hooks/useLogin';
 import styles from './Login.module.css'
 import { useState } from 'react'
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { isPending, error, login } = useLogin();
 
     const handleData = (event) => {
         if (event.target.type === "email") {
@@ -15,7 +17,7 @@ export default function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(email, password);
+        login(email, password);
     }
 
     return (
@@ -88,7 +90,10 @@ export default function Login() {
                     <label className="label-style" htmlFor="user-pw">비밀번호</label>
                     <input className="input-style" id="user-pw" type="password" required onChange={handleData} value={password} autoComplete='currnet-password' />
 
-                    <button className="black-btn" type="submit">로그인</button>
+                    {!isPending && <button className="black-btn" type="submit">로그인</button>}
+                    {isPending && <strong>로그인이 진행중입니다...</strong>}
+                    {error && <strong>{error}</strong>}
+
                 </form>
             </main>
 
