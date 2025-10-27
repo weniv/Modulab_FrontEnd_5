@@ -8,12 +8,18 @@ import DiaryList from './DiaryList';
 export default function Home() {
 
     const { user } = useAuthContext();
-    const { documents, error } = useCollection('diary');
+    const { documents, error } = useCollection('diary', ['uid', '==', user.uid]);
+
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}.${month}.${day}`;
 
     return (
-        <div className="container">
+        <div className={styles.container}>
             <main className={styles["diary-main"]}>
-                <h2 className="heart">2023.06.08의 비밀일기</h2>
+                <h2 className="heart">{formattedDate}의 비밀일기</h2>
                 <DiaryForm uid={user.uid}></DiaryForm>
             </main>
             <section>

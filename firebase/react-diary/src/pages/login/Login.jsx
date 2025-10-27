@@ -80,7 +80,7 @@ export default function Login() {
                         </defs>
                     </svg>
 
-                    <strong className={styles.line}>로그인</strong>
+                    <strong className={styles.line}>로그인로그인로그인</strong>
                 </h2>
 
                 <form className={styles["form-wrap"]} onSubmit={handleSubmit}>

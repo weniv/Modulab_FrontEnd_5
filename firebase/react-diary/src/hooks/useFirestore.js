@@ -1,6 +1,6 @@
 import { useReducer } from "react"
 import { appFireStore, Timestamp } from "../firebase/config"
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc } from "firebase/firestore"
 
 // 우리가 받을 응답을 저장할 객체입니다. 객체이기 때문에 리듀서로 관리하겠습니다. 
 // 그리고 이전까지는 상태를 관리할 때 error나 isPending을 위한 useState을 따로 작성해왔지만 이번에는 useReducer로 한번에 관리해보겠습니다.
@@ -24,6 +24,8 @@ const storeReducer = (state, action) => {
             return { isPending: false, document: action.payload, success: true, error: null }
         case 'error':
             return { isPending: false, document: null, success: false, error: action.payload }
+        case 'deleteDoc':
+            return { isPending: false, document: action.payload, success: true, error: null }
         default:
             return state
     }
@@ -54,8 +56,14 @@ export const useFirestore = (transaction) => {
     }
 
     // 컬렉션에서 문서를 제거합니다.
-    const deleteDocument = (id) => {
-
+    const deleteDocument = async (id) => {
+        dispatch({ type: 'isPending' });
+        try {
+            const docRef = await deleteDoc(doc(colRef, id));
+            dispatch({ type: 'deleteDoc', payload: docRef });
+        } catch (error) {
+            dispatch({ type: 'error', payload: error.message });
+        }
     }
 
     return { addDocument, deleteDocument, response }
